@@ -7,7 +7,7 @@ const CASES = [
     desc: "Designed an enterprise platform that helps consultants and actuarial teams build investment strategies, model assumptions, and analyze pension plans with confidence.",
     pills: ['Prototyping with AI', 'Research', 'Testing'],
     meta: [['Client', 'Eckler - Investment Team'], ['Role', 'Lead PD'], ['Type', 'Internal Software']],
-    img: 'uploads/Connect-Thumbail-1-3f158a4c.png',
+    img: 'assets/images/home/connect-thumb.png',
   },
   {
     n: '002 — AI Powered Insurance Brokerage',
@@ -15,7 +15,7 @@ const CASES = [
     desc: 'Led the design of AI-driven cross-sell recommendations and campaign workflows, helping scale agency growth through intelligent automation and informed decisions based on data.',
     pills: ['Desk Research', 'Prototyping with AI', 'Analytics'],
     meta: [['Client', 'GYDE health'], ['Role', 'Lead PD'], ['Type', 'B2B']],
-    img: 'uploads/Campaign - List-ecb96069.png',
+    img: 'assets/images/home/gyde-thumb.png',
   },
   {
     n: '003 — Insurance',
@@ -23,7 +23,7 @@ const CASES = [
     desc: "Led the redesign of RIMAC's customer app and employee intranet, transforming complex insurance services into a more intuitive digital experience backed by user research.",
     pills: ['Service design', 'User Research', 'Design Concept'],
     meta: [['Client', 'Rimac'], ['Role', 'Product Designer'], ['Type', 'App & Intranet']],
-    img: 'uploads/Rimac-Thumbnail1.png',
+    img: 'assets/images/rimac/rimac-thumbnail1.png',
   },
   {
     n: '004 — B2B',
@@ -31,7 +31,7 @@ const CASES = [
     desc: 'Led research and concept design for an enterprise account management experience, helping administrators manage users, permissions, and organizational roles more efficiently across large teams.',
     pills: ['Design Concept', 'Testing', 'Catalog'],
     meta: [['Client', 'TalentReef'], ['Role', 'Lead PD'], ['Type', 'B2B']],
-    img: 'uploads/Case004-Thumbnail-cropped.png',
+    img: 'assets/images/talentreef/case004-thumbnail-cropped.png',
   },
   {
     n: '005 — Public health',
