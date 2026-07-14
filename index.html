@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <script>try{var t=localStorage.getItem('iv-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ingrid Valdera — Senior Product Designer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Poppins:wght@400&display=swap" />
+
+  <link rel="stylesheet" href="site.css" />
+  <style>
+    /* ── Hero animated gradient ── */
+    @property --hero-c1 {
+      syntax: "<color>";
+      inherits: false;
+      initial-value: oklch(35% 0.22 293);
+    }
+    @property --hero-c2 {
+      syntax: "<color>";
+      inherits: false;
+      initial-value: oklch(8% 0.02 293);
+    }
+    @property --hero-c3 {
+      syntax: "<color>";
+      inherits: false;
+      initial-value: oklch(7% 0.01 260);
+    }
+    @property --hero-c4 {
+      syntax: "<color>";
+      inherits: false;
+      initial-value: oklch(32% 0.20 293);
+    }
+    @property --hero-c5 {
+      syntax: "<color>";
+      inherits: false;
+      initial-value: oklch(8% 0.02 280);
+    }
+
+    @keyframes hero-shift {
+      0%, 100% {
+        --hero-c1: oklch(38% 0.26 293);
+        --hero-c2: oklch(6% 0.01 280);
+        --hero-c3: oklch(7% 0.01 260);
+        --hero-c4: oklch(36% 0.24 293);
+        --hero-c5: oklch(6% 0.01 275);
+      }
+      40% {
+        --hero-c1: oklch(6% 0.01 293);
+        --hero-c2: oklch(40% 0.28 295);
+        --hero-c3: oklch(7% 0.01 260);
+        --hero-c4: oklch(6% 0.01 285);
+        --hero-c5: oklch(38% 0.26 288);
+      }
+      60% {
+        --hero-c1: oklch(6% 0.01 293);
+        --hero-c2: oklch(40% 0.28 295);
+        --hero-c3: oklch(7% 0.01 260);
+        --hero-c4: oklch(6% 0.01 285);
+        --hero-c5: oklch(38% 0.26 288);
+      }
+    }
+
+    .hero-v2 {
+      animation: hero-shift 8s ease-in-out infinite;
+      background:
+        radial-gradient(ellipse 90% 70% at 10% 120% in oklch, var(--hero-c1), transparent 62%),
+        radial-gradient(ellipse 65% 50% at 88% 100% in oklch, var(--hero-c2), transparent 55%),
+        radial-gradient(ellipse 55% 35% at 15% -10% in oklch, var(--hero-c4), transparent 60%),
+        radial-gradient(ellipse 45% 30% at 85% -5% in oklch, var(--hero-c5), transparent 55%),
+        var(--hero-c3);
+    }
+  </style>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="description" content="Enterprise systems, AI product design, and consumer experience — portfolio of Ingrid Valdera." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ingrid Valdera — Senior Product Designer" />
+  <meta property="og:description" content="Enterprise systems, AI product design, and consumer experience — portfolio of Ingrid Valdera." />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ingrid Valdera — Senior Product Designer" />
+  <meta name="twitter:description" content="Enterprise systems, AI product design, and consumer experience — portfolio of Ingrid Valdera." />
+  <meta name="twitter:image" content="/assets/og-image.png" />
+</head>
+<body>
+
+
+  <!-- ─── Page Loader ─── -->
+  <div class="page-loader open">
+    <div class="page-loader__inner">
+      <div class="page-loader__logo">
+        <span style="font-family: 'Geist', ui-sans-serif, sans-serif; font-size: 28px; font-weight: 400; letter-spacing: -0.02em; color: #fff;">Ingrid Valdera Urday</span>
+      </div>
+    </div>
+    <svg class="page-loader__mask" viewBox="0 0 1440 1024" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <clipPath id="page-loader__clip-path" clipPathUnits="objectBoundingBox" transform="scale(0.000694444444444,0.0009765625)">
+        <path id="maskpath" fill-rule="evenodd" clip-rule="evenodd" d="M1440.02,0H.02l-.02,1024c22.06,0,447.62,0,720.02,0s691.96,0,719.98,0l.02-1024Z" fill="#0A0A0F" />
+      </clipPath>
+      <path class="page-loader__morph-shape" id="maskMorphShapeStart" d="M1440.02,0H.02l-.02,1024c41.36-101.95,447.62-246,720.02-246s678.62,144.05,719.98,246l.02-1024Z" fill="#0A0A0F" />
+      <path class="page-loader__morph-shape" id="maskMorphShapeEnd" d="M0 1H1440V2H0V1Z" fill="#0A0A0F" />
+    </svg>
+  </div>
+
+  <main>
+    <!-- ─── Fixed pill nav ─── -->
+    <nav class="pill-nav" id="pill-nav" aria-label="Primary">
+      <div class="pill-nav__inner">
+        <a href="index.html" class="pill-nav__brand">
+          <img class="logo-dark" src="uploads/InValdur.-ab41dde3.svg" alt="InValdur." style="height: 16px; display: block;" />
+          <img class="logo-light" src="uploads/darkInValdur..svg" alt="InValdur." style="height: 16px; display: none;" />
+        </a>
+        <div class="pill-nav__links">
+          <button class="theme-toggle" aria-label="Switch theme">
+            <svg class="t-moon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M11.2 9.1A5 5 0 0 1 4.9 2.8c0-.3-.3-.5-.5-.4A6 6 0 1 0 11.6 9.6c.1-.2-.1-.5-.4-.5Z" fill="currentColor"/></svg>
+            <svg class="t-sun" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="2.6" fill="currentColor"/><path d="M7 .8v1.4M7 11.8V13.2M.8 7h1.4M11.8 7h1.4M2.7 2.7l1 1M10.3 10.3l1 1M10.3 3.7l1-1M2.7 11.3l1-1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <span class="t-lbl-light">Light</span>
+            <span class="t-lbl-dark">Dark</span>
+          </button>
+          <div class="pill-nav__item">
+            <a href="#cases" class="pill-nav__link is-active" aria-haspopup="true" aria-expanded="false" style="font-size: 14px; font-weight: 500">Projects <i class="pill-nav__caret"></i></a>
+            <div class="pill-nav__dropdown">
+              <a href="case-01.html" class="pill-nav__drop-link" style="font-size: 14px; font-weight: 500">Investment Technology</a>
+              <a href="case-02.html" class="pill-nav__drop-link" style="font-size: 14px; font-weight: 500">Brokerage Growth AI</a>
+              <a href="case-03.html" class="pill-nav__drop-link" style="font-size: 14px; font-weight: 500">Insurance Platform</a>
+              <a href="case-04.html" class="pill-nav__drop-link" style="font-size: 14px; font-weight: 500">Talent Management Software</a>
+            </div>
+          </div>
+          <a href="about.html" class="pill-nav__link" style="font-size: 14px; font-weight: 500">About me</a>
+          <a href="contact.html" class="pill-nav__link" style="font-size: 14px; font-weight: 500">Let's talk!</a>
+          <a href="https://www.linkedin.com/in/ingridvaldera/" target="_blank" rel="noopener" class="pill-nav__link" style="font-size: 14px; font-weight: 500">LinkedIn</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ─── Hero v2 ─── -->
+    <section class="hero-v2">
+
+      <!-- Body: text left · decoration right -->
+      <div class="hero-v2__body">
+
+        <div class="hero-v2__left">
+          <p class="hero-v2__eyebrow">Lead Product Designer (8 years)</p>
+          <h1 class="hero-v2__headline">Designing where<br/><span class="hero-underline" style="font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--rosewood-2);">product decisions</span><br/>happen.</h1>
+          <p class="hero-v2__sub">Multiple stakeholders. Real constraints. Better decisions: AI can generate interfaces. I design what happens next.</p>
+        </div>
+
+        <!-- Location badge -->
+        <div class="hero-v2__right" aria-hidden="true">
+          <div class="hero-location">
+            <span class="hero-location__text">Located<br/>in Toronto</span>
+            <span class="hero-location__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </span>
+          </div>
+          <svg class="deco-svg" viewBox="0 0 637 795" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.30;">
+            <g clip-path="url(#clip0_23_24)">
+              <path d="M263.35 332.088C263.35 446.357 378.255 538.989 520 538.989C661.745 538.989 776.65 446.357 776.65 332.088H263.35Z" stroke="#8E6ACB" stroke-opacity="0.35" stroke-width="3" stroke-miterlimit="10"></path>
+              <path d="M263.35 463.011C263.35 577.28 378.255 669.912 520 669.912C661.745 669.912 776.65 577.28 776.65 463.011H263.35Z" stroke="#8E6ACB" stroke-opacity="0.35" stroke-width="3" stroke-miterlimit="10"></path>
+            </g>
+            <g clip-path="url(#clip1_23_24)">
+              <path d="M657.083 204.358H480.691L605.421 79.628L590.366 64.5791L465.642 189.309V12.9169H444.358V189.309L319.628 64.5791L304.579 79.628L429.31 204.358H252.917V225.642H429.31L304.579 350.366L319.628 365.421L444.358 240.691V417.083H465.642V240.691L590.366 365.421L605.421 350.366L480.691 225.642H657.083V204.358Z" stroke="#C4B5FD" stroke-opacity="0.45" stroke-width="3" stroke-miterlimit="10"></path>
+            </g>
+            <g clip-path="url(#clip2_23_24)">
+              <path d="M128.669 186.458C143.397 186.458 155.337 174.491 155.337 159.729C155.337 144.967 143.397 133 128.669 133C113.94 133 102 144.967 102 159.729C102 174.491 113.94 186.458 128.669 186.458Z" fill="#2A2A2A" fill-opacity="0.4"></path>
+              <path d="M182 186.458C196.729 186.458 208.669 174.491 208.669 159.729C208.669 144.967 196.729 133 182 133C167.272 133 155.332 144.967 155.332 159.729C155.332 174.491 167.272 186.458 182 186.458Z" fill="#2A2A2A" fill-opacity="0.4"></path>
+              <path d="M235.331 186.458C250.06 186.458 262 174.491 262 159.729C262 144.967 250.06 133 235.331 133C220.603 133 208.663 144.967 208.663 159.729C208.663 174.491 220.603 186.458 235.331 186.458Z" fill="#2A2A2A" fill-opacity="0.4"></path>
+              <path d="M154.993 217.463C157.352 202.891 147.48 189.162 132.941 186.796C118.403 184.431 104.704 194.326 102.344 208.897C99.9844 223.469 109.857 237.198 124.395 239.564C138.934 241.929 152.633 232.034 154.993 217.463Z" fill="#2A2A2A" fill-opacity="0.4"></path>
+              <path d="M208.325 217.468C210.685 202.896 200.812 189.167 186.274 186.802C171.736 184.436 158.037 194.331 155.677 208.902C153.317 223.474 163.19 237.203 177.728 239.569C192.266 241.934 205.965 232.039 208.325 217.468Z" fill="#2A2A2A" fill-opacity="0.4"></path>
+              <path d="M254.192 232.084C264.607 221.646 264.607 204.722 254.192 194.284C243.778 183.845 226.892 183.845 216.477 194.284C206.062 204.722 206.062 221.646 216.477 232.084C226.892 242.522 243.778 242.522 254.192 232.084Z" fill="#2A2A2A" fill-opacity="0.4"></path>
+              <path d="M128.669 266.633C143.397 266.633 155.337 260.65 155.337 253.271C155.337 245.892 143.397 239.91 128.669 239.91C113.94 239.91 102 245.892 102 253.271C102 260.65 113.94 266.633 128.669 266.633Z" fill="#2A2A2A" fill-opacity="0.4"></path>
+              <path d="M182 266.633C196.729 266.633 208.669 260.65 208.669 253.271C208.669 245.892 196.729 239.91 182 239.91C167.272 239.91 155.332 245.892 155.332 253.271C155.332 260.65 167.272 266.633 182 266.633Z" fill="#2A2A2A" fill-opacity="0.4"></path>
+              <path d="M235.331 266.633C250.06 266.633 262 260.65 262 253.271C262 245.892 250.06 239.91 235.331 239.91C220.603 239.91 208.663 245.892 208.663 253.271C208.663 260.65 220.603 266.633 235.331 266.633Z" fill="#2A2A2A" fill-opacity="0.4"></path>
+              <path d="M128.669 279.994C143.397 279.994 155.337 277.003 155.337 273.313C155.337 269.624 143.397 266.633 128.669 266.633C113.94 266.633 102 269.624 102 273.313C102 277.003 113.94 279.994 128.669 279.994Z" fill="#2A2A2A" fill-opacity="0.4"></path>
+              <path d="M182 279.994C196.729 279.994 208.669 277.003 208.669 273.313C208.669 269.624 196.729 266.633 182 266.633C167.272 266.633 155.332 269.624 155.332 273.313C155.332 277.003 167.272 279.994 182 279.994Z" fill="#2A2A2A" fill-opacity="0.4"></path>
+              <path d="M235.331 279.994C250.06 279.994 262 277.003 262 273.313C262 269.624 250.06 266.633 235.331 266.633C220.603 266.633 208.663 269.624 208.663 273.313C208.663 277.003 220.603 279.994 235.331 279.994Z" fill="#2A2A2A" fill-opacity="0.4"></path>
+            </g>
+            <!-- Sparkles -->
+            <path d="M37.8703 124.289C38.9213 123.863 39.7549 123.029 40.1809 121.978L43.5396 113.694C44.9547 110.203 49.8967 110.203 51.3117 113.694L54.6704 121.978C55.0965 123.029 55.9301 123.863 56.981 124.289L65.2658 127.648C68.7562 129.063 68.7562 134.005 65.2658 135.42L56.981 138.778C55.9301 139.205 55.0965 140.038 54.6704 141.089L51.3117 149.374C49.8967 152.864 44.9547 152.864 43.5396 149.374L40.1809 141.089C39.7549 140.038 38.9213 139.205 37.8703 138.778L29.5855 135.42C26.0951 134.005 26.0951 129.063 29.5855 127.648L37.8703 124.289Z" fill="white"></path>
+            <path d="M98.3546 155.524C98.88 155.311 99.2968 154.894 99.5099 154.368L101.672 149.036C102.379 147.291 104.85 147.291 105.558 149.036L107.719 154.368C107.932 154.894 108.349 155.311 108.875 155.524L114.207 157.685C115.952 158.393 115.952 160.864 114.207 161.571L108.875 163.733C108.349 163.946 107.932 164.363 107.719 164.888L105.558 170.221C104.85 171.966 102.379 171.966 101.672 170.221L99.5099 164.888C99.2968 164.363 98.88 163.946 98.3546 163.733L93.0223 161.571C91.2771 160.864 91.2771 158.393 93.0223 157.685L98.3546 155.524Z" fill="#9DBFDB"></path>
+            <path d="M44.8414 83.2804C45.3669 83.0673 45.7837 82.6506 45.9967 82.1251L48.1584 76.7928C48.8659 75.0476 51.3369 75.0476 52.0445 76.7928L54.2062 82.1251C54.4192 82.6506 54.836 83.0673 55.3615 83.2804L60.6938 85.4421C62.439 86.1496 62.439 88.6206 60.6938 89.3281L55.3615 91.4899C54.836 91.7029 54.4192 92.1197 54.2062 92.6452L52.0445 97.9775C51.3369 99.7227 48.8659 99.7227 48.1584 97.9775L45.9967 92.6452C45.7837 92.1197 45.3669 91.7029 44.8414 91.4899L39.5091 89.3281C37.7639 88.6206 37.7639 86.1496 39.5091 85.4421L44.8414 83.2804Z" fill="#ccc" fill-opacity="0.5"></path>
+            <path d="M68.6349 111.491C69.6732 111.039 70.4848 110.187 70.885 109.128L76.9491 93.0817C78.3151 89.4672 83.4281 89.4672 84.7941 93.0817L90.8582 109.128C91.2584 110.187 92.07 111.039 93.1083 111.491L108.82 118.324C112.181 119.785 112.181 124.552 108.82 126.014L93.1083 132.847C92.07 133.299 91.2584 134.151 90.8582 135.21L84.7941 151.256C83.4281 154.87 78.3151 154.87 76.9491 151.256L70.885 135.21C70.4848 134.151 69.6732 133.299 68.6349 132.847L52.9231 126.014C49.5619 124.552 49.5619 119.785 52.9231 118.324L68.6349 111.491Z" fill="#ccc" fill-opacity="0.5"></path>
+            <!-- Blobs (mix-blend-mode: multiply) -->
+            <g style="mix-blend-mode:screen">
+              <path d="M302.58 342.645C302.58 300.867 268.712 267 226.935 267H151.29V418.29H226.935C268.712 418.29 302.58 384.422 302.58 342.645Z" fill="#888" fill-opacity="0.8"></path>
+              <path d="M151.29 493.935C151.29 452.157 185.157 418.29 226.935 418.29C268.712 418.29 302.58 452.157 302.58 493.935C302.58 535.712 268.712 569.58 226.935 569.58C185.157 569.58 151.29 535.712 151.29 493.935Z" fill="#555" fill-opacity="0.8"></path>
+              <path d="M0 493.935C0 452.157 33.8674 418.29 75.6449 418.29H151.29V569.58H75.6449C33.8674 569.58 0 535.712 0 493.935Z" fill="#888" fill-opacity="0.8"></path>
+              <path d="M0 342.645C0 300.867 33.8674 267 75.6449 267H151.29V418.29H75.6449C33.8674 418.29 0 384.422 0 342.645Z" fill="#555" fill-opacity="0.8"></path>
+              <path d="M0 645.224C0 603.447 33.8674 569.58 75.6449 569.58H151.29V645.224C151.29 687.002 117.422 720.869 75.6449 720.869C33.8674 720.869 0 687.002 0 645.224Z" fill="#555" fill-opacity="0.8"></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_23_24">
+                <rect width="516" height="340" fill="white" transform="translate(262 331)"></rect>
+              </clipPath>
+              <clipPath id="clip1_23_24">
+                <rect width="406" height="406" fill="white" transform="translate(252 12)"></rect>
+              </clipPath>
+              <clipPath id="clip2_23_24">
+                <rect width="160" height="147" fill="white" transform="translate(102 133)"></rect>
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+          
+
+      </div>
+
+      <!-- Footer contact row -->
+      <div class="hero-v2__foot">
+        <a href="mailto:ingridvalderaurday@gmail.com" data-copy-email class="hero-v2__contact-link" style="font-size: 12px; font-weight: 500">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+          ingridvalderaurday@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/ingridvaldera/" target="_blank" rel="noopener" class="hero-v2__contact-link" style="font-size: 12px; text-align: justify; align-items: center; font-weight: 500">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+
+    </section>
+
+    <!-- ─── Work index ─── -->
+    <section class="work-head">
+      <div>
+        <div class="work-head__eyebrow">— SELECTED PROJECTS —</div>
+        <h2 class="work-head__title">5 Case <em>Studies</em></h2>
+      </div>
+      <div class="work-head__meta">Updated · April 2026</div>
+    </section>
+
+    <div class="cases" id="cases">
+      <!-- cases injected by script below -->
+    </div>
+
+    <!-- ─── More coming soon ─── -->
+    <div class="cases-coming">
+      <span class="cases-coming__dot"></span>
+      <p class="cases-coming__text">MORE CASE STUDIES COMING SOON, STAY TUNED!</p>
+    </div>
+
+    <!-- ─── Why Me ─── -->
+    <section class="why-me">
+      <div class="why-me__head">
+        <div class="why-me__eyebrow" style="text-align: center; font-weight: 400">— WHY ME? —</div>
+        <h2 class="why-me__title" style="font-size: 64px; text-align: center">My key <em style="font-family: 'Instrument Serif', serif; font-style: italic;">Strengths</em></h2>
+      </div>
+      <div class="why-me__grid">
+
+        <div class="why-me__card">
+          <div class="why-me__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h3 class="why-me__card-title">7+ Years of Experience</h3>
+            <p class="why-me__card-body">Across B2B &amp; B2C in fintech, insurance, health tech, and enterprise SaaS.</p>
+          </div>
+        </div>
+
+        <div class="why-me__card">
+          <div class="why-me__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>
+          </div>
+          <div>
+            <h3 class="why-me__card-title">UX &amp; UI Design</h3>
+            <p class="why-me__card-body">Designing intuitive, user-centered experiences that align with business goals.</p>
+          </div>
+        </div>
+
+        <div class="why-me__card">
+          <div class="why-me__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div>
+            <h3 class="why-me__card-title">AI-Native Designer</h3>
+            <p class="why-me__card-body">I use AI to research, ideate, and iterate faster, so we can build smarter products.</p>
+          </div>
+        </div>
+
+        <div class="why-me__card">
+          <div class="why-me__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><circle cx="11" cy="11" r="3"/></svg>
+          </div>
+          <div>
+            <h3 class="why-me__card-title">Detail &amp; Quality Obsessed</h3>
+            <p class="why-me__card-body">I notice what others miss and communicate clearly to ship polished solutions.</p>
+          </div>
+        </div>
+
+        <div class="why-me__card">
+          <div class="why-me__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div>
+            <h3 class="why-me__card-title">Curious &amp; Purposeful</h3>
+            <p class="why-me__card-body">I value feedback, stay curious, and keep learning to create meaningful impact.</p>
+          </div>
+        </div>
+
+        <div class="why-me__card">
+          <div class="why-me__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <h3 class="why-me__card-title">Cross-Functional Partner</h3>
+            <p class="why-me__card-body">I collaborate with product, eng, data, legal, and marketing to turn ideas into real results.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── Contact ─── -->
+    <section class="contact-block">
+      <div>
+        <div class="contact-block__eyebrow">[ Let's talk ]</div>
+        <h2 class="contact-block__title">Great products<br />don't happen by accident.</h2>
+        <p class="contact-block__sub">Let's build one together.</p>
+        <p class="contact-block__intro">Whether you're hiring, building, or simply exchanging ideas, my inbox is always open.</p>
+      </div>
+      <div class="contact-block__right">
+        <div class="contact-block__email-label">Email</div>
+        <div class="contact-block__email-row">
+          <a class="contact-block__email-text" href="mailto:ingridvalderaurday@gmail.com" aria-label="Email Ingrid">ingridvalderaurday@gmail.com</a>
+          <button class="contact-block__copy-btn" data-copy-email aria-label="Copy email">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy
+          </button>
+        </div>
+        <div class="contact-block__rows">
+          <div class="contact-block__row">
+            <span class="contact-block__row-key">Status</span>
+            <span class="contact-block__status-val"><span class="contact-block__status-dot"></span>Full-time · Contract · Consulting</span>
+          </div>
+          <a class="contact-block__row" href="https://www.linkedin.com/in/ingridvaldera/" target="_blank" rel="noopener">
+            <span class="contact-block__row-key">LinkedIn</span>
+            <span class="contact-block__row-val">/in/ingridvaldera ↗</span>
+          </a>
+          <div class="contact-block__row">
+            <span class="contact-block__row-key">Location</span>
+            <span class="contact-block__row-val">Toronto, ON</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© 2026 — All rights reserved</span>
+      <span>v.2026.04</span>
+      <span>Built in Toronto, ON</span>
+    </footer>
+  </main>
+
+  <!-- ─── Scripts ─── -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
+  <script src="cases-data.js"></script>
+  <script src="willem-hero.js"></script>
+  <script src="pill-nav.js"></script>
+  <script src="theme-toggle.js"></script>
+  <script src="email-copy.js"></script>
+  <script>
+    /* Hero nav — glass state on scroll */
+    (function () {
+      var nav = document.querySelector('.hero-nav');
+      if (!nav) return;
+      function update() {
+        nav.classList.toggle('is-scrolled', window.scrollY > 20);
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    (function () {
+      if (typeof MorphSVGPlugin !== 'undefined') {
+        gsap.registerPlugin(MorphSVGPlugin);
+      }
+
+      var loader   = document.querySelector('.page-loader');
+      var maskPath = document.getElementById('maskpath');
+      var shapeStart = document.getElementById('maskMorphShapeStart');
+      var shapeEnd   = document.getElementById('maskMorphShapeEnd');
+
+      function runLoader() {
+        var tl = gsap.timeline({
+          onComplete: function () {
+            loader.style.display = 'none';
+          }
+        });
+
+        // Fade logo in then out
+        tl.to('.page-loader__logo', { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, 0);
+        tl.to('.page-loader__logo', { opacity: 0, y: -16, duration: 0.4, ease: 'power2.in' }, 1.0);
+
+        if (maskPath && shapeStart && shapeEnd && typeof MorphSVGPlugin !== 'undefined') {
+          // Wave morph then collapse to line
+          tl.to(maskPath, { duration: 0.75, morphSVG: shapeStart, ease: 'power1.in' }, 0.7);
+          tl.to(maskPath, { duration: 0.9,  morphSVG: shapeEnd,   ease: 'power2.out' }, 1.45);
+        } else {
+          // Fallback: simple scale-down
+          tl.to(loader, { scaleY: 0, transformOrigin: 'top center', duration: 0.8, ease: 'power2.inOut' }, 1.0);
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', runLoader);
+      } else {
+        runLoader();
+      }
+    })();
+  </script>
+</body>
+</html>
+
+<style id="__om-edit-overrides">
+#case-01 >[data-n] { background-position: top center !important }
+#case-01 >[data-n] { background-size: cover !important }
+#case-04 >[data-n] { background-position: top left !important }
+#case-04 >[data-n] { background-size: cover !important }
+#case-01 >[data-n] { background-size: cover !important }
+#case-01 { font-family: "Instrument Serif" !important }
+#case-01 p { font-family: Geist !important }
+#case-01 div:nth-child(1) >dd { font-family: Geist !important }
+#case-01 div:nth-child(2) >dd { font-family: Geist !important }
+#case-01 div:nth-child(3) >dd { font-family: Geist !important }
+</style>

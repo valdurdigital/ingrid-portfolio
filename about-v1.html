@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- anti-FOUC: apply saved theme before first paint -->
+  <script>try{var t=localStorage.getItem('iv-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Ingrid Valdera</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
+
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body>
+  <!-- ─── Fixed pill nav ─── -->
+  <nav class="pill-nav" id="pill-nav" aria-label="Primary">
+    <div class="pill-nav__inner">
+      <a href="index.html" class="pill-nav__brand">
+        <img class="logo-dark" src="uploads/InValdur.-ab41dde3.svg" alt="InValdur." style="height: 16px; display: block;" />
+        <img class="logo-light" src="uploads/darkInValdur..svg" alt="InValdur." style="height: 16px; display: none;" />
+      </a>
+      <div class="pill-nav__links">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Switch theme">
+          <svg class="t-moon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M11.2 9.1A5 5 0 0 1 4.9 2.8c0-.3-.3-.5-.5-.4A6 6 0 1 0 11.6 9.6c.1-.2-.1-.5-.4-.5Z" fill="currentColor"/></svg>
+          <svg class="t-sun" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="2.6" fill="currentColor"/><path d="M7 .8v1.4M7 11.8V13.2M.8 7h1.4M11.8 7h1.4M2.7 2.7l1 1M10.3 10.3l1 1M10.3 3.7l1-1M2.7 11.3l1-1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <span class="t-lbl-light">Light</span>
+          <span class="t-lbl-dark">Dark</span>
+        </button>
+        <div class="pill-nav__item">
+          <a href="index.html#cases" class="pill-nav__link" aria-haspopup="true" aria-expanded="false">Projects <i class="pill-nav__caret"></i></a>
+          <div class="pill-nav__dropdown">
+            <a href="case-01.html" class="pill-nav__drop-link" style="font-size: 14px">Investment Technology</a>
+            <a href="case-02.html" class="pill-nav__drop-link" style="font-size: 14px">Brokerage Growth AI</a>
+            <a href="case-03.html" class="pill-nav__drop-link" style="font-size: 14px">Insurance Platform</a>
+            <a href="case-04.html" class="pill-nav__drop-link" style="font-size: 14px">Talent Management Software</a>
+          </div>
+        </div>
+        <a href="about.html" class="pill-nav__link is-active">About me</a>
+        <a href="contact.html" class="pill-nav__link">Let's talk!</a>
+        <a href="https://www.linkedin.com/in/ingridvaldera/" target="_blank" rel="noopener" class="pill-nav__link">LinkedIn</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="about-hero">
+      <div>
+        <div class="about-hero__eyebrow">[ About ]</div>
+        <h1 class="about-hero__title">A short note,<br/><em>about how I work.</em></h1>
+      </div>
+      <aside class="about-side">
+        <dl>
+          <div><dt>Pronouns</dt><dd>they / them</dd></div>
+          <div><dt>Born</dt><dd>Halifax, NS · 1990</dd></div>
+          <div><dt>Lives</dt><dd>Toronto, ON</dd></div>
+          <div><dt>Studied</dt><dd>BDes, OCAD U · 2014</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <div class="about-portrait"></div>
+
+    <section class="about-body">
+      <p class="about-body__lede">
+        Most of my work lives in <em>the long, awkward middle</em>
+        of a system — the part where teams disagree about what
+        the product is for.
+      </p>
+      <div class="about-body__paragraph">
+        <p>
+          I started out at a small studio in Halifax doing civic
+          and health-sector work, then spent five years at Shopify
+          and Northbridge before joining Maple &amp; Reed in 2022.
+          Along the way I became the person on a team who likes
+          the unglamorous problems best — the ones that won't fit
+          on a slide.
+        </p>
+        <p>
+          I write a lot, prototype early, and try not to make
+          things that need a tour to use. I read everything I
+          ship to a non-designer before it ships. Outside of
+          work I'm slowly learning to bind books, and quickly
+          learning that I'm not very good at it yet.
+        </p>
+      </div>
+    </section>
+
+    <section class="grid-2">
+      <div>
+        <h2>Experience.</h2>
+        <div class="exp-row"><div class="exp-row__year">2022—</div><div><div class="exp-row__title">Senior Product Designer</div><div class="exp-row__co">Maple &amp; Reed</div></div></div>
+        <div class="exp-row"><div class="exp-row__year">2019—22</div><div><div class="exp-row__title">Product Designer</div><div class="exp-row__co">Northbridge Financial</div></div></div>
+        <div class="exp-row"><div class="exp-row__year">2017—19</div><div><div class="exp-row__title">Designer</div><div class="exp-row__co">Shopify</div></div></div>
+        <div class="exp-row"><div class="exp-row__year">2014—17</div><div><div class="exp-row__title">Designer / Researcher</div><div class="exp-row__co">Independent</div></div></div>
+      </div>
+      <div>
+        <h2>Things I do.</h2>
+        <div class="skill-row"><span class="skill-row__k">Design</span><span class="skill-row__v">Product design, service design, IA, prototyping</span></div>
+        <div class="skill-row"><span class="skill-row__k">Research</span><span class="skill-row__v">Field studies, contextual inquiry, usability</span></div>
+        <div class="skill-row"><span class="skill-row__k">Writing</span><span class="skill-row__v">UX writing, plain-language re-writes, docs</span></div>
+        <div class="skill-row"><span class="skill-row__k">Systems</span><span class="skill-row__v">Design systems, contribution models, governance</span></div>
+        <div class="skill-row"><span class="skill-row__k">Education</span><span class="skill-row__v">Workshops, mentoring, occasional teaching</span></div>
+      </div>
+    </section>
+
+    <section class="contact-block">
+      <div>
+        <div class="contact-block__eyebrow">[ Contact ]</div>
+        <h2 class="contact-block__title">Designing something that matters?</h2>
+        <p class="contact-block__sub">I'd like to hear about it.</p>
+      </div>
+      <div class="contact-block__right">
+        <div class="contact-block__email-row">
+          <span class="contact-block__email-text">ingridvalderaurday@gmail.com</span>
+          <button class="contact-block__copy-btn" data-copy-email aria-label="Copy email">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <div class="contact-block__rows">
+          <a class="contact-block__row" href="https://www.linkedin.com/in/ingridvaldera/" target="_blank" rel="noopener">
+            <span class="contact-block__row-key">LinkedIn</span>
+            <span class="contact-block__row-val">/in/ingridvaldera ↗</span>
+          </a>
+          <a class="contact-block__row" href="https://read.cv/ingrid" target="_blank" rel="noopener">
+            <span class="contact-block__row-key">Read.cv</span>
+            <span class="contact-block__row-val">/ingrid ↗</span>
+          </a>
+          <div class="contact-block__row">
+            <span class="contact-block__row-key">Location</span>
+            <span class="contact-block__row-val">Toronto, ON</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© 2026 — All rights reserved</span>
+      <span>v.2026.04</span>
+      <span>Built in Toronto, ON</span>
+    </footer>
+  </main>
+  <script src="pill-nav.js"></script>
+  <script src="theme-toggle.js"></script>
+  <script src="email-copy.js"></script>
+</body>
+</html>

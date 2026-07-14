@@ -1,0 +1,1251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <script>try{var t=localStorage.getItem('iv-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>A More Human Insurance Experience — RIMAC · Ingrid Valdera</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600;700;800&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="site.css" />
+  <link rel="stylesheet" href="case-study.css" />
+  <style>
+    /* ── Editorial two-column hero ── */
+    .cs-hero2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 140px 64px 100px;
+      background: var(--bg);
+      margin-bottom: 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .cs-hero2__eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cs-hero2__eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: var(--line);
+      flex-shrink: 0;
+    }
+    .cs-hero2__title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(38px, 4.5vw, 68px);
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin: 0 0 20px;
+    }
+    .cs-hero2__title em {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--rosewood-2);
+    }
+    .cs-hero2__desc {
+      font-size: 17px;
+      line-height: 1.72;
+      color: var(--cool-gray);
+      margin: 0 0 32px;
+      max-width: 48ch;
+    }
+    .cs-hero2__meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin: 0 0 40px;
+      border-top: 1px solid var(--line);
+    }
+    .cs-hero2__meta-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .cs-hero2__meta-item dt {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .cs-hero2__meta-item dd {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 0;
+    }
+    .cs-hero2__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background: var(--ink);
+      color: var(--bg);
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .cs-hero2__cta:hover {
+      background: var(--rosewood-2);
+      transform: translateY(-1px);
+    }
+    .cs-hero2__right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cs-hero2__browser {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12), 0 24px 64px rgba(0,0,0,0.18);
+      transition: transform 0.4s cubic-bezier(.2,.65,.3,1), box-shadow 0.4s ease;
+    }
+    .cs-hero2__browser:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.14), 0 32px 80px rgba(0,0,0,0.22);
+    }
+    .cs-hero2__browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+    .cs-hero2__dots { display: flex; gap: 6px; flex-shrink: 0; }
+    .cs-hero2__dots span { width: 10px; height: 10px; border-radius: 50%; display: block; }
+    .cs-hero2__dots span:nth-child(1) { background: #FF5F57; }
+    .cs-hero2__dots span:nth-child(2) { background: #FEBC2E; }
+    .cs-hero2__dots span:nth-child(3) { background: #28C840; }
+    .cs-hero2__url {
+      flex: 1;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 4px 10px;
+      margin: 0 48px;
+      letter-spacing: 0.02em;
+    }
+    .cs-hero2__screen { max-height: 460px; overflow: hidden; }
+    .cs-hero2__screen img { width: 100%; display: block; object-fit: cover; object-position: top; }
+    @media (max-width: 860px) {
+      .cs-hero2 { grid-template-columns: 1fr; padding: 120px 40px 80px; gap: 56px; }
+      .cs-hero2__right { order: -1; }
+      .cs-hero2__url { margin: 0 24px; }
+    }
+    @media (max-width: 600px) {
+      .cs-hero2 { padding: 100px 24px 64px; }
+      .cs-hero2__meta { grid-template-columns: 1fr; }
+    }
+    /* ── Reveal animations ── */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s cubic-bezier(.2,.65,.3,1), transform 0.65s cubic-bezier(.2,.65,.3,1);
+    }
+    [data-reveal].is-in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] { opacity: 1; transform: none; transition: none; }
+    }
+    /* ── Challenge cards ── */
+    .rm-challenges {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 40px 0 8px;
+    }
+    .rm-challenge {
+      padding: 32px 28px;
+      border: 1px solid var(--line-soft);
+      border-radius: 14px;
+      background: var(--paper);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .rm-challenge:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.10); }
+    .rm-challenge__icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--rosewood-2);
+      margin-bottom: 18px;
+    }
+    .rm-challenge__title {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 0 0 6px;
+    }
+    .rm-challenge__body { font-size: 13.5px; line-height: 1.6; color: var(--cool-gray); margin: 0; }
+    /* ── Masonry exploration ── */
+    .rm-masonry {
+      columns: 2;
+      column-gap: 16px;
+      margin: 40px 0 8px;
+    }
+    .rm-tile {
+      break-inside: avoid;
+      margin-bottom: 16px;
+      border: 1px solid var(--line-soft);
+      border-radius: 14px;
+      background: var(--paper);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .rm-tile:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(0,0,0,0.10); }
+    .rm-tile__label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 16px 20px 0;
+    }
+    .rm-tile__pad { padding: 16px 20px 22px; }
+    .rm-type-xl { font-family: var(--font-heading); font-size: 44px; font-weight: 700; letter-spacing: -0.03em; color: var(--ink); line-height: 1.05; }
+    .rm-type-serif { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 32px; color: var(--rosewood-2); }
+    .rm-type-sm { font-size: 13px; color: var(--cool-gray); line-height: 1.6; }
+    .rm-swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+    .rm-swatch { border-radius: 8px; aspect-ratio: 1; border: 1px solid rgba(0,0,0,0.06); }
+    .rm-swatch span {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 8.5px;
+      color: var(--muted);
+      margin-top: 6px;
+      text-align: center;
+    }
+    .rm-spacing-row { display: flex; align-items: flex-end; gap: 10px; }
+    .rm-spacing-block { background: var(--rosewood-2); opacity: 0.85; border-radius: 4px; width: 100%; }
+    .rm-icons-row { display: flex; gap: 14px; flex-wrap: wrap; color: var(--ink); }
+    .rm-icons-row svg { opacity: 0.8; }
+    /* ── Concept timeline ── */
+    .rm-timeline { margin: 40px 0 8px; }
+    .rm-tl-step { margin-bottom: 40px; }
+    .rm-tl-head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .rm-tl-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--rosewood-2);
+      flex-shrink: 0;
+    }
+    .rm-tl-title { font-family: var(--font-heading); font-size: 17px; font-weight: 600; color: var(--ink); }
+    .rm-tl-head::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+    /* ── Responsive showcase ── */
+    .rm-devices {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 24px;
+      margin: 48px 0 8px;
+    }
+    .rm-device {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--paper);
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      transition: transform 0.35s ease;
+    }
+    .rm-device:hover { transform: translateY(-6px); }
+    .rm-device--desktop { flex: 3; }
+    .rm-device--tablet { flex: 1.6; }
+    .rm-device--mobile { flex: 1; }
+    .rm-device__bar {
+      height: 22px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line-soft);
+      display: flex; align-items: center; gap: 4px;
+      padding: 0 10px;
+    }
+    .rm-device__bar i { width: 6px; height: 6px; border-radius: 50%; background: var(--line); display: block; }
+    .rm-device img { width: 100%; display: block; cursor: zoom-in; }
+    .rm-device__label {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: center;
+      padding: 10px 0 12px;
+      border-top: 1px solid var(--line-soft);
+    }
+    @media (max-width: 720px) {
+      .rm-devices { flex-direction: column; align-items: stretch; }
+    }
+    /* ── Design language cards ── */
+    .rm-dl-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 40px 0 8px;
+    }
+    .rm-dl-card {
+      border: 1px solid var(--line-soft);
+      border-radius: 14px;
+      background: var(--paper);
+      padding: 24px;
+      min-height: 150px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .rm-dl-card:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(0,0,0,0.10); }
+    .rm-dl-card__label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+    .rm-btn-demo {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .rm-btn-demo--primary { background: var(--ink); color: var(--bg); }
+    .rm-btn-demo--secondary { border: 1px solid var(--line); color: var(--ink); background: transparent; }
+    .rm-input-demo {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--bg);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .rm-card-demo {
+      border: 1px solid var(--line-soft);
+      border-radius: 10px;
+      background: var(--bg);
+      padding: 14px;
+      font-size: 12px;
+      color: var(--cool-gray);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+    .rm-elev-row { display: flex; gap: 12px; }
+    .rm-elev {
+      flex: 1;
+      aspect-ratio: 1.4;
+      border-radius: 10px;
+      background: var(--bg);
+      border: 1px solid var(--line-soft);
+    }
+    .rm-elev:nth-child(2) { box-shadow: 0 6px 16px rgba(0,0,0,0.10); }
+    .rm-elev:nth-child(3) { box-shadow: 0 16px 40px rgba(0,0,0,0.16); }
+    .rm-states-row { display: flex; flex-direction: column; gap: 8px; }
+    .rm-state {
+      padding: 9px 14px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-family: var(--font-heading);
+      font-weight: 500;
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+    .rm-state--hover { background: var(--bg); border-color: var(--rosewood-2); }
+    .rm-state--active { background: var(--rosewood-2); border-color: var(--rosewood-2); color: #fff; }
+    /* ── Gallery carousel ── */
+    .rm-gallery {
+      position: relative;
+      margin: 40px 0 8px;
+    }
+    .rm-gallery__track {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      padding: 8px 4px 20px;
+      cursor: grab;
+    }
+    .rm-gallery__track::-webkit-scrollbar { display: none; }
+    .rm-gallery__track.is-dragging { cursor: grabbing; scroll-snap-type: none; }
+    .rm-gallery__item {
+      flex: 0 0 72%;
+      scroll-snap-align: center;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .rm-gallery__item:hover { transform: scale(1.015); box-shadow: 0 18px 48px rgba(0,0,0,0.16); }
+    .rm-gallery__item img { width: 100%; display: block; cursor: zoom-in; }
+    .rm-gallery__btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      font-size: 16px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 3;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.14);
+    }
+    .rm-gallery__btn.is-visible { opacity: 0.94; pointer-events: auto; }
+    .rm-gallery__btn:hover { opacity: 1; background: var(--paper); }
+    .rm-gallery__btn--prev { left: -14px; }
+    .rm-gallery__btn--next { right: -14px; }
+    /* ── Lightbox ── */
+    .rm-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.9);
+      align-items: center;
+      justify-content: center;
+      padding: 48px;
+    }
+    .rm-lightbox.is-open { display: flex; }
+    .rm-lightbox__img {
+      max-width: 88vw;
+      max-height: 88vh;
+      border-radius: 10px;
+      object-fit: contain;
+      box-shadow: 0 40px 90px rgba(0,0,0,0.5);
+      animation: rm-zoom 0.3s cubic-bezier(.2,.65,.3,1);
+    }
+    @keyframes rm-zoom {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .rm-lightbox__close {
+      position: absolute;
+      top: 20px; right: 24px;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 2;
+    }
+    .rm-lightbox__nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: #fff;
+      font-size: 17px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 2;
+    }
+    .rm-lightbox__nav--prev { left: 22px; }
+    .rm-lightbox__nav--next { right: 22px; }
+    /* ── Selected screens ── */
+    .rm-screens {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 40px 0 8px;
+    }
+    .rm-screen {
+      border: 1px solid var(--line-soft);
+      border-radius: 14px;
+      background: var(--paper);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .rm-screen:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
+    .rm-screen__label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 14px 18px;
+      border-top: 1px solid var(--line-soft);
+    }
+    /* ── Decision cards ── */
+    .rm-decisions { display: flex; flex-direction: column; gap: 16px; margin: 40px 0 8px; }
+    .rm-decision {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 28px;
+      align-items: center;
+      border: 1px solid var(--line-soft);
+      border-radius: 16px;
+      background: var(--paper);
+      padding: 36px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .rm-decision:hover { transform: translateY(-3px); box-shadow: 0 16px 44px rgba(0,0,0,0.10); }
+    .rm-decision__title {
+      font-family: var(--font-heading);
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin: 0 0 10px;
+    }
+    .rm-decision__body { font-size: 14px; line-height: 1.68; color: var(--cool-gray); margin: 0; }
+    .rm-decision__visual { border-radius: 10px; overflow: hidden; border: 1px solid var(--line-soft); }
+    .rm-decision__visual img { width: 100%; display: block; }
+    /* ── Outcome ── */
+    .rm-outcome {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 36px 0 8px;
+    }
+    .rm-outcome__item {
+      padding: 22px 24px;
+      border: 1px solid var(--line-soft);
+      border-radius: 12px;
+      background: var(--paper);
+      font-family: var(--font-heading);
+      font-size: 14.5px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    @media (max-width: 860px) {
+      .rm-challenges, .rm-dl-grid, .rm-screens, .rm-outcome { grid-template-columns: repeat(2, 1fr); }
+      .rm-decision { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .rm-challenges, .rm-dl-grid, .rm-screens, .rm-outcome { grid-template-columns: 1fr; }
+      .rm-masonry { columns: 1; }
+      .rm-gallery__item { flex: 0 0 88%; }
+    }
+  </style>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="description" content="Case study by Ingrid Valdera, Senior Product Designer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="A More Human Insurance Experience — RIMAC · Ingrid Valdera" />
+  <meta property="og:description" content="Case study by Ingrid Valdera, Senior Product Designer." />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A More Human Insurance Experience — RIMAC · Ingrid Valdera" />
+  <meta name="twitter:description" content="Case study by Ingrid Valdera, Senior Product Designer." />
+  <meta name="twitter:image" content="/assets/og-image.png" />
+</head>
+<body>
+  <!-- ─── Fixed pill nav ─── -->
+  <nav class="pill-nav" id="pill-nav" aria-label="Primary">
+    <div class="pill-nav__inner">
+      <a href="index.html" class="pill-nav__brand">
+        <img class="logo-dark" src="uploads/InValdur.-ab41dde3.svg" alt="InValdur." style="height: 16px; display: block;" />
+        <img class="logo-light" src="uploads/darkInValdur..svg" alt="InValdur." style="height: 16px; display: none;" />
+      </a>
+      <div class="pill-nav__links">
+        <button class="theme-toggle" aria-label="Switch theme">
+          <svg class="t-moon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M11.2 9.1A5 5 0 0 1 4.9 2.8c0-.3-.3-.5-.5-.4A6 6 0 1 0 11.6 9.6c.1-.2-.1-.5-.4-.5Z" fill="currentColor"/></svg>
+          <svg class="t-sun" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="2.6" fill="currentColor"/><path d="M7 .8v1.4M7 11.8V13.2M.8 7h1.4M11.8 7h1.4M2.7 2.7l1 1M10.3 10.3l1 1M10.3 3.7l1-1M2.7 11.3l1-1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <span class="t-lbl-light">Light</span>
+          <span class="t-lbl-dark">Dark</span>
+        </button>
+        <div class="pill-nav__item">
+          <a href="index.html#cases" class="pill-nav__link is-active" aria-haspopup="true" aria-expanded="false">Projects <i class="pill-nav__caret"></i></a>
+          <div class="pill-nav__dropdown">
+            <a href="case-01.html" class="pill-nav__drop-link" style="font-size: 14px">Investment Technology</a>
+            <a href="case-02.html" class="pill-nav__drop-link" style="font-size: 14px">Brokerage Growth AI</a>
+            <a href="case-03.html" class="pill-nav__drop-link" style="font-size: 14px">Insurance Platform</a>
+            <a href="case-04.html" class="pill-nav__drop-link" style="font-size: 14px">Talent Management</a>
+          </div>
+        </div>
+        <a href="about.html" class="pill-nav__link">About me</a>
+        <a href="contact.html" class="pill-nav__link">Let's talk!</a>
+        <a href="https://www.linkedin.com/in/ingridvaldera/" target="_blank" rel="noopener" class="pill-nav__link">LinkedIn</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <header class="cs-hero2">
+      <div class="cs-hero2__left">
+        <p class="cs-hero2__eyebrow">003 — Insurance · App &amp; Intranet</p>
+        <h1 class="cs-hero2__title">A More <em>Human Insurance</em> Experience</h1>
+        <p class="cs-hero2__desc">Led the redesign of RIMAC's customer app and intranet, creating one cohesive visual language across web and mobile that makes insurance feel intuitive and trustworthy.</p>
+        <dl class="cs-hero2__meta">
+          <div class="cs-hero2__meta-item"><dt>Client</dt><dd>RIMAC</dd></div>
+          <div class="cs-hero2__meta-item"><dt>Role</dt><dd>Product Designer</dd></div>
+          <div class="cs-hero2__meta-item"><dt>Industry</dt><dd>Insurance</dd></div>
+          <div class="cs-hero2__meta-item"><dt>Platform</dt><dd>Intranet, Web &amp; Mobile</dd></div>
+        </dl>
+        <a href="#overview" class="cs-hero2__cta">Read Case Study ↓</a>
+      </div>
+      <div class="cs-hero2__right">
+        <div class="cs-hero2__browser">
+          <div class="cs-hero2__browser-bar">
+            <div class="cs-hero2__dots"><span></span><span></span><span></span></div>
+            <div class="cs-hero2__url">mimundo.rimac.com</div>
+          </div>
+          <div class="cs-hero2__screen">
+            <img src="uploads/Rimac-Thumbnail1.png" alt="Mi Mundo RIMAC customer platform" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="cs-page">
+
+      <!-- 1 · Introduction -->
+      <section class="cs-section" id="overview" data-reveal>
+        <p class="cs-label">Overview</p>
+        <h2 class="cs-section-title">Designing trust through digital experiences</h2>
+        <p class="cs-body">RIMAC's digital touchpoints had grown fragmented, inconsistent interfaces, unclear navigation, and an experience that felt transactional rather than supportive.</p>
+        <p class="cs-body">A refreshed brand created the opportunity to humanize insurance: one cohesive visual language, applied consistently across web and mobile.</p>
+        <div class="cs-img-wrap" data-reveal>
+          <img src="uploads/Screenshot 2026-07-13 at 7.02.09 PM.png" alt="RIMAC — home concepts and proposals" style="width:100%;display:block;border-radius:10px;cursor:zoom-in;" onclick="rmOpenLightbox(this)" />
+        </div>
+        <p class="cs-caption">Playground proposals for Mi Mundo RIMAC, the redesigned customer experience. Click to expand.</p>
+      </section>
+
+      <!-- 2 · Challenge -->
+      <section class="cs-section" data-reveal>
+        <p class="cs-label">The Design Challenge</p>
+        <h2 class="cs-section-title">Three problems, one visual language</h2>
+        <div class="rm-challenges">
+          <div class="rm-challenge" data-reveal>
+            <div class="rm-challenge__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/></svg>
+            </div>
+            <p class="rm-challenge__title">Fragmented experiences</p>
+            <p class="rm-challenge__body">Every product lived in its own silo, forcing customers to relearn each interface.</p>
+          </div>
+          <div class="rm-challenge" data-reveal>
+            <div class="rm-challenge__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            </div>
+            <p class="rm-challenge__title">Difficult navigation</p>
+            <p class="rm-challenge__body">Finding coverage or filing a claim took too many steps, at the worst possible moments.</p>
+          </div>
+          <div class="rm-challenge" data-reveal>
+            <div class="rm-challenge__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>
+            </div>
+            <p class="rm-challenge__title">Inconsistent visual language</p>
+            <p class="rm-challenge__body">The new brand hadn't reached the product. Digital felt disconnected from RIMAC's identity.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 · Visual Exploration -->
+      <section class="cs-section" data-reveal>
+        <p class="cs-label">Visual Exploration</p>
+        <h2 class="cs-section-title">Opening the Figma file</h2>
+        <p class="cs-body">Typography, colour, spacing, and component experiments, including the directions we rejected.</p>
+
+        <!-- Color Palette Carousel -->
+        <div style="margin: 40px 0 8px;">
+          <h3 style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 16px;">Color Palette</h3>
+          <div style="position: relative; overflow: hidden; border-radius: 12px; background: var(--paper); border: 1px solid var(--line);">
+            <div style="display: flex; gap: 16px; overflow-x: auto; scroll-behavior: smooth; scroll-snap-type: x mandatory; padding: 24px; scrollbar-width: thin;" id="colors-carousel-case">
+              <div style="flex: 0 0 220px; scroll-snap-align: start; border-radius: 8px; border: 1px solid var(--line-soft); overflow: hidden; background: var(--paper);">
+                <div style="width: 100%; height: 100px; background: #CC133C;"></div>
+                <div style="padding: 16px;">
+                  <div style="font-weight: 600; font-size: 13px; color: var(--ink); margin-bottom: 4px;">Red RIMAC 700</div>
+                  <div style="font-family: var(--font-mono); color: var(--cool-gray); font-size: 11px;">#CC133C</div>
+                  <div style="font-size: 11px; color: var(--muted); margin-top: 6px;">Brand primary</div>
+                </div>
+              </div>
+              <div style="flex: 0 0 220px; scroll-snap-align: start; border-radius: 8px; border: 1px solid var(--line-soft); overflow: hidden; background: var(--paper);">
+                <div style="width: 100%; height: 100px; background: #EB2146;"></div>
+                <div style="padding: 16px;">
+                  <div style="font-weight: 600; font-size: 13px; color: var(--ink); margin-bottom: 4px;">Red RIMAC 600</div>
+                  <div style="font-family: var(--font-mono); color: var(--cool-gray); font-size: 11px;">#EB2146</div>
+                  <div style="font-size: 11px; color: var(--muted); margin-top: 6px;">Hover states</div>
+                </div>
+              </div>
+              <div style="flex: 0 0 220px; scroll-snap-align: start; border-radius: 8px; border: 1px solid var(--line-soft); overflow: hidden; background: var(--paper);">
+                <div style="width: 100%; height: 100px; background: #FF1C44;"></div>
+                <div style="padding: 16px;">
+                  <div style="font-weight: 600; font-size: 13px; color: var(--ink); margin-bottom: 4px;">Red RIMAC 500</div>
+                  <div style="font-family: var(--font-mono); color: var(--cool-gray); font-size: 11px;">#FF1C44</div>
+                  <div style="font-size: 11px; color: var(--muted); margin-top: 6px;">CTA, highlights</div>
+                </div>
+              </div>
+              <div style="flex: 0 0 220px; scroll-snap-align: start; border-radius: 8px; border: 1px solid var(--line-soft); overflow: hidden; background: var(--paper);">
+                <div style="width: 100%; height: 100px; background: #141938;"></div>
+                <div style="padding: 16px;">
+                  <div style="font-weight: 600; font-size: 13px; color: var(--ink); margin-bottom: 4px;">Neutral N700</div>
+                  <div style="font-family: var(--font-mono); color: var(--cool-gray); font-size: 11px;">#141938</div>
+                  <div style="font-size: 11px; color: var(--muted); margin-top: 6px;">Headlines</div>
+                </div>
+              </div>
+              <div style="flex: 0 0 220px; scroll-snap-align: start; border-radius: 8px; border: 1px solid var(--line-soft); overflow: hidden; background: var(--paper);">
+                <div style="width: 100%; height: 100px; background: #E1E4F4;"></div>
+                <div style="padding: 16px;">
+                  <div style="font-weight: 600; font-size: 13px; color: var(--ink); margin-bottom: 4px;">Neutral N200</div>
+                  <div style="font-family: var(--font-mono); color: var(--cool-gray); font-size: 11px;">#E1E4F4</div>
+                  <div style="font-size: 11px; color: var(--muted); margin-top: 6px;">Backgrounds</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Typography Carousel -->
+        <div style="margin: 40px 0 8px;">
+          <h3 style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 16px;">Typography System</h3>
+          <div style="position: relative; overflow: hidden; border-radius: 12px; background: var(--paper); border: 1px solid var(--line);">
+            <div style="display: flex; gap: 16px; overflow-x: auto; scroll-behavior: smooth; scroll-snap-type: x mandatory; padding: 24px; scrollbar-width: thin;" id="typography-carousel-case">
+              <div style="flex: 0 0 240px; scroll-snap-align: start; border-radius: 8px; border: 1px solid var(--line-soft); background: var(--paper); padding: 24px; display: flex; flex-direction: column; justify-content: center;">
+                <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px;">Headline 1</div>
+                <div style="font-family: var(--font-heading); font-size: 48px; font-weight: 700; line-height: 1.2; color: var(--ink); margin-bottom: 12px;">Clear, warm</div>
+                <div style="font-size: 12px; color: var(--cool-gray); line-height: 1.5;">56px Bold<br />Lato</div>
+              </div>
+              <div style="flex: 0 0 240px; scroll-snap-align: start; border-radius: 8px; border: 1px solid var(--line-soft); background: var(--paper); padding: 24px; display: flex; flex-direction: column; justify-content: center;">
+                <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px;">Headline 2</div>
+                <div style="font-family: var(--font-heading); font-size: 40px; font-weight: 700; line-height: 1.2; color: var(--ink); margin-bottom: 12px;">Legible always</div>
+                <div style="font-size: 12px; color: var(--cool-gray); line-height: 1.5;">40px Bold<br />Poppins</div>
+              </div>
+              <div style="flex: 0 0 240px; scroll-snap-align: start; border-radius: 8px; border: 1px solid var(--line-soft); background: var(--paper); padding: 24px; display: flex; flex-direction: column; justify-content: center;">
+                <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px;">Body Regular</div>
+                <div style="font-family: var(--font-heading); font-size: 16px; font-weight: 400; line-height: 1.6; color: var(--ink); margin-bottom: 12px;">Built for stressful moments.</div>
+                <div style="font-size: 12px; color: var(--cool-gray); line-height: 1.5;">16px Regular<br />Roboto</div>
+              </div>
+              <div style="flex: 0 0 240px; scroll-snap-align: start; border-radius: 8px; border: 1px solid var(--line-soft); background: var(--paper); padding: 24px; display: flex; flex-direction: column; justify-content: center;">
+                <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px;">Label</div>
+                <div style="font-family: var(--font-heading); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); margin-bottom: 12px;">CLEAR & WARM</div>
+                <div style="font-size: 12px; color: var(--cool-gray); line-height: 1.5;">12px Semibold<br />Poppins</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grids Carousel -->
+        <div style="margin: 40px 0 8px;">
+          <h3 style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 16px;">Grid Systems</h3>
+          <div style="position: relative; overflow: hidden; border-radius: 12px; background: var(--paper); border: 1px solid var(--line);">
+            <div style="display: flex; gap: 16px; overflow-x: auto; scroll-behavior: smooth; scroll-snap-type: x mandatory; padding: 24px; scrollbar-width: thin;" id="grids-carousel-case">
+              <div style="flex: 0 0 240px; scroll-snap-align: start; border-radius: 8px; border: 1px solid var(--line-soft); background: var(--paper); padding: 20px; text-align: center;">
+                <div style="width: 100%; height: 100px; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; background: var(--bg); border-radius: 8px; overflow: hidden;">
+                  <svg width="80" height="80" viewBox="0 0 120 120" fill="none" stroke="var(--cool-gray)" stroke-width="1.5">
+                    <rect x="5" y="5" width="25" height="25" rx="2"/>
+                    <rect x="35" y="5" width="25" height="25" rx="2"/>
+                    <rect x="65" y="5" width="25" height="25" rx="2"/>
+                    <rect x="95" y="5" width="20" height="25" rx="2"/>
+                    <rect x="5" y="35" width="25" height="25" rx="2"/>
+                    <rect x="35" y="35" width="25" height="25" rx="2"/>
+                    <rect x="65" y="35" width="25" height="25" rx="2"/>
+                    <rect x="95" y="35" width="20" height="25" rx="2"/>
+                  </svg>
+                </div>
+                <div style="font-weight: 600; font-size: 13px; color: var(--ink); margin-bottom: 4px;">6 Column Grid</div>
+                <div style="font-size: 11px; color: var(--cool-gray);">360px flexible width</div>
+              </div>
+              <div style="flex: 0 0 240px; scroll-snap-align: start; border-radius: 8px; border: 1px solid var(--line-soft); background: var(--paper); padding: 20px; text-align: center;">
+                <div style="width: 100%; height: 100px; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; background: var(--bg); border-radius: 8px; overflow: hidden;">
+                  <svg width="80" height="80" viewBox="0 0 120 120" fill="none" stroke="var(--cool-gray)" stroke-width="1.5">
+                    <rect x="5" y="5" width="20" height="25" rx="2"/>
+                    <rect x="30" y="5" width="20" height="25" rx="2"/>
+                    <rect x="55" y="5" width="20" height="25" rx="2"/>
+                    <rect x="80" y="5" width="20" height="25" rx="2"/>
+                    <rect x="5" y="35" width="20" height="25" rx="2"/>
+                    <rect x="30" y="35" width="45" height="25" rx="2"/>
+                    <rect x="80" y="35" width="20" height="25" rx="2"/>
+                    <rect x="5" y="65" width="45" height="25" rx="2"/>
+                    <rect x="55" y="65" width="45" height="25" rx="2"/>
+                  </svg>
+                </div>
+                <div style="font-weight: 600; font-size: 13px; color: var(--ink); margin-bottom: 4px;">8 Column Grid</div>
+                <div style="font-size: 11px; color: var(--cool-gray);">Complex layouts</div>
+              </div>
+              <div style="flex: 0 0 240px; scroll-snap-align: start; border-radius: 8px; border: 1px solid var(--line-soft); background: var(--paper); padding: 20px; text-align: center;">
+                <div style="width: 100%; height: 100px; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; background: var(--bg); border-radius: 8px; overflow: hidden;">
+                  <svg width="80" height="80" viewBox="0 0 120 120" fill="none" stroke="var(--cool-gray)" stroke-width="1.5">
+                    <rect x="10" y="10" width="25" height="25" rx="2"/>
+                    <rect x="40" y="10" width="25" height="25" rx="2"/>
+                    <rect x="70" y="10" width="35" height="25" rx="2"/>
+                    <rect x="10" y="40" width="25" height="25" rx="2"/>
+                    <rect x="40" y="40" width="25" height="25" rx="2"/>
+                    <rect x="70" y="40" width="35" height="25" rx="2"/>
+                    <rect x="10" y="70" width="95" height="25" rx="2"/>
+                  </svg>
+                </div>
+                <div style="font-weight: 600; font-size: 13px; color: var(--ink); margin-bottom: 4px;">Mobile Grid</div>
+                <div style="font-size: 11px; color: var(--cool-gray);">Responsive frames</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shadows Carousel -->
+        <div style="margin: 40px 0 8px;">
+          <h3 style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 16px;">Elevation & Shadows</h3>
+          <div style="position: relative; overflow: hidden; border-radius: 12px; background: var(--paper); border: 1px solid var(--line);">
+            <div style="display: flex; gap: 16px; overflow-x: auto; scroll-behavior: smooth; scroll-snap-type: x mandatory; padding: 24px; scrollbar-width: thin;" id="shadows-carousel-case">
+              <div style="flex: 0 0 200px; scroll-snap-align: start; border-radius: 8px; border: 1px solid var(--line-soft); background: var(--paper); padding: 20px; text-align: center;">
+                <div style="width: 100%; height: 100px; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; background: var(--bg); border-radius: 8px; box-shadow: 0 1px 2px rgba(20, 25, 56, 0.05);"></div>
+                <div style="font-weight: 600; font-size: 13px; color: var(--ink); margin-bottom: 4px;">Small</div>
+                <div style="font-size: 10px; color: var(--cool-gray); font-family: var(--font-mono);">0 1px 2px</div>
+              </div>
+              <div style="flex: 0 0 200px; scroll-snap-align: start; border-radius: 8px; border: 1px solid var(--line-soft); background: var(--paper); padding: 20px; text-align: center;">
+                <div style="width: 100%; height: 100px; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; background: var(--bg); border-radius: 8px; box-shadow: 0 2px 6px rgba(20, 25, 56, 0.08);"></div>
+                <div style="font-weight: 600; font-size: 13px; color: var(--ink); margin-bottom: 4px;">Medium</div>
+                <div style="font-size: 10px; color: var(--cool-gray); font-family: var(--font-mono);">0 2px 6px</div>
+              </div>
+              <div style="flex: 0 0 200px; scroll-snap-align: start; border-radius: 8px; border: 1px solid var(--line-soft); background: var(--paper); padding: 20px; text-align: center;">
+                <div style="width: 100%; height: 100px; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; background: var(--bg); border-radius: 8px; box-shadow: 0 4px 12px rgba(20, 25, 56, 0.12);"></div>
+                <div style="font-weight: 600; font-size: 13px; color: var(--ink); margin-bottom: 4px;">Large</div>
+                <div style="font-size: 10px; color: var(--cool-gray); font-family: var(--font-mono);">0 4px 12px</div>
+              </div>
+              <div style="flex: 0 0 200px; scroll-snap-align: start; border-radius: 8px; border: 1px solid var(--line-soft); background: var(--paper); padding: 20px; text-align: center;">
+                <div style="width: 100%; height: 100px; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; background: var(--bg); border-radius: 8px; box-shadow: 0 8px 24px rgba(20, 25, 56, 0.16);"></div>
+                <div style="font-weight: 600; font-size: 13px; color: var(--ink); margin-bottom: 4px;">X-Large</div>
+                <div style="font-size: 10px; color: var(--cool-gray); font-family: var(--font-mono);">0 8px 24px</div>
+              </div>
+              <div style="flex: 0 0 200px; scroll-snap-align: start; border-radius: 8px; border: 1px solid var(--line-soft); background: var(--paper); padding: 20px; text-align: center;">
+                <div style="width: 100%; height: 100px; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; background: var(--bg); border-radius: 8px; box-shadow: 0 16px 40px rgba(20, 25, 56, 0.20);"></div>
+                <div style="font-weight: 600; font-size: 13px; color: var(--ink); margin-bottom: 4px;">2X-Large</div>
+                <div style="font-size: 10px; color: var(--cool-gray); font-family: var(--font-mono);">0 16px 40px</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 · Concept to Interface -->
+      <section class="cs-section" data-reveal>
+        <p class="cs-label">From Concept to Interface</p>
+        <h2 class="cs-section-title">Iterating in the open</h2>
+        <div class="rm-timeline">
+          <div class="rm-tl-step" data-reveal>
+            <div class="rm-tl-head"><span class="rm-tl-num">Concept A</span><span class="rm-tl-title">Service-first navigation</span></div>
+            <div class="cs-img-wrap" style="margin:0;">
+              <img src="uploads/Screenshot 2026-07-13 at 7.49.25 PM.png" alt="Concept A — process board: concepto, benchmark, workshops, data, iteraciones" style="width:100%;display:block;border-radius:10px;cursor:zoom-in;" onclick="rmOpenLightbox(this)" />
+            </div>
+          </div>
+          <div class="rm-tl-step" data-reveal>
+            <div class="rm-tl-head"><span class="rm-tl-num">Concept B</span><span class="rm-tl-title">Life-moments navigation</span></div>
+            <div class="cs-img-wrap" style="margin:0;">
+              <img src="uploads/Screenshot 2026-07-13 at 7.50.19 PM.png" alt="Concept B — wireframe explorations with annotations" style="width:100%;display:block;border-radius:10px;cursor:zoom-in;" onclick="rmOpenLightbox(this)" />
+            </div>
+          </div>
+          <div class="rm-tl-step" data-reveal>
+            <div class="rm-tl-head"><span class="rm-tl-num">Final</span><span class="rm-tl-title">One home, personalized</span></div>
+            <div class="cs-img-wrap" style="margin:0;">
+              <img src="uploads/Screenshot 2026-07-13 at 7.51.58 PM.png" alt="Final design — personalized iOS home screens" style="width:100%;display:block;border-radius:10px;cursor:zoom-in;" onclick="rmOpenLightbox(this)" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 · Responsive Experience -->
+      <section class="cs-section" data-reveal>
+        <p class="cs-label">Responsive Experience</p>
+        <h2 class="cs-section-title">One experience, every screen</h2>
+        <div class="rm-devices" data-reveal>
+          <div class="rm-device rm-device--desktop">
+            <div class="rm-device__bar"><i></i><i></i><i></i></div>
+            <img src="uploads/zp_rebrand_2.jpg" alt="Desktop interface — Mi Mundo RIMAC" onclick="rmOpenLightbox(this)" />
+            <p class="rm-device__label">Desktop</p>
+          </div>
+          <div class="rm-device rm-device--mobile">
+            <div class="rm-device__bar"></div>
+            <img src="uploads/iOS_Home.jpg" alt="Mobile interface — iOS home" onclick="rmOpenLightbox(this)" />
+            <p class="rm-device__label">Mobile</p>
+          </div>
+        </div>
+        <p class="cs-caption">The same visual language adapting across desktop and mobile.</p>
+      </section>
+
+      <!-- 6 · Design Language (hidden) -->
+      <section class="cs-section" data-reveal style="display: none;">
+        <p class="cs-label">Design Language</p>
+        <h2 class="cs-section-title">A system, shown not told</h2>
+        <div class="rm-dl-grid">
+          <div class="rm-dl-card" data-reveal>
+            <p class="rm-dl-card__label">Typography</p>
+            <p style="font-family:var(--font-heading);font-size:26px;font-weight:700;color:var(--ink);margin:0 0 4px;">Aa Bb Cc</p>
+            <p class="rm-type-sm">Heading / Body / Caption</p>
+          </div>
+          <div class="rm-dl-card" data-reveal>
+            <p class="rm-dl-card__label">Color</p>
+            <div class="rm-swatches" style="grid-template-columns:repeat(4,1fr);">
+              <div class="rm-swatch" style="background:#E30613;"></div>
+              <div class="rm-swatch" style="background:#1C1A1A;"></div>
+              <div class="rm-swatch" style="background:#F2EFEA;"></div>
+              <div class="rm-swatch" style="background:#6C63FF;"></div>
+            </div>
+          </div>
+          <div class="rm-dl-card" data-reveal>
+            <p class="rm-dl-card__label">Buttons</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <span class="rm-btn-demo rm-btn-demo--primary">Pay now</span>
+              <span class="rm-btn-demo rm-btn-demo--secondary">View details</span>
+            </div>
+          </div>
+          <div class="rm-dl-card" data-reveal>
+            <p class="rm-dl-card__label">Cards</p>
+            <div class="rm-card-demo"><strong style="color:var(--ink);">SOAT</strong><br />Valid until 10/04/2023</div>
+          </div>
+          <div class="rm-dl-card" data-reveal>
+            <p class="rm-dl-card__label">Inputs</p>
+            <div class="rm-input-demo">Search your policy…</div>
+          </div>
+          <div class="rm-dl-card" data-reveal>
+            <p class="rm-dl-card__label">Spacing</p>
+            <div class="rm-spacing-row" style="align-items:flex-end;">
+              <div class="rm-spacing-block" style="height:6px;"></div>
+              <div class="rm-spacing-block" style="height:14px;"></div>
+              <div class="rm-spacing-block" style="height:24px;"></div>
+              <div class="rm-spacing-block" style="height:38px;"></div>
+            </div>
+          </div>
+          <div class="rm-dl-card" data-reveal>
+            <p class="rm-dl-card__label">Elevation</p>
+            <div class="rm-elev-row"><div class="rm-elev"></div><div class="rm-elev"></div><div class="rm-elev"></div></div>
+          </div>
+          <div class="rm-dl-card" data-reveal>
+            <p class="rm-dl-card__label">Interaction states</p>
+            <div class="rm-states-row">
+              <span class="rm-state">Default</span>
+              <span class="rm-state rm-state--hover">Hover</span>
+              <span class="rm-state rm-state--active">Active</span>
+            </div>
+          </div>
+          <div class="rm-dl-card" data-reveal>
+            <p class="rm-dl-card__label">Icons</p>
+            <div class="rm-icons-row">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-8 9 8"/><path d="M5 9v11h14V9"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 6.5 5.5 5.5 0 0 1 21.5 12c-2.5 4.4-9.5 9-9.5 9z"/></svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 · High Fidelity Gallery (hidden) -->
+      <section class="cs-section" data-reveal style="display: none;">
+        <p class="cs-label">High Fidelity Gallery</p>
+        <h2 class="cs-section-title">The product, up close</h2>
+        <p class="cs-body">Drag, swipe, or use the arrows. Click any screen to view fullscreen.</p>
+        <div class="rm-gallery">
+          <button class="rm-gallery__btn rm-gallery__btn--prev" id="rmGalPrev" aria-label="Previous">&#8592;</button>
+          <button class="rm-gallery__btn rm-gallery__btn--next" id="rmGalNext" aria-label="Next">&#8594;</button>
+          <div class="rm-gallery__track" id="rmGalTrack" tabindex="0">
+            <div class="rm-gallery__item"><img src="uploads/Rimac-Thumbnail1.png" alt="Mi Mundo RIMAC — home" onclick="rmOpenLightbox(this)" /></div>
+            <div class="rm-gallery__item"><img src="uploads/RIMAC.jpg" alt="RIMAC customer app" onclick="rmOpenLightbox(this)" /></div>
+          </div>
+        </div>
+        <p class="cs-caption">Representative screens from the redesigned experience. Click any image to explore in detail.</p>
+      </section>
+
+      <!-- 8 · Selected Screens -->
+      <section class="cs-section" data-reveal>
+        <p class="cs-label">Selected Screens</p>
+        <h2 class="cs-section-title">Across the product</h2>
+        <div class="rm-screens">
+          <div class="rm-screen" data-reveal>
+            <img src="uploads/inicio sesion.png" alt="Sign in — Mundo RIMAC" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;object-position:top;cursor:zoom-in;" onclick="rmOpenLightbox(this)" />
+            <p class="rm-screen__label">Sign in</p>
+          </div>
+          <div class="rm-screen" data-reveal>
+            <img src="uploads/rimacapp.jpg" alt="Web dashboard — products overview" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;object-position:top;cursor:zoom-in;" onclick="rmOpenLightbox(this)" />
+            <p class="rm-screen__label">Dashboard</p>
+          </div>
+          <div class="rm-screen" data-reveal>
+            <img src="uploads/zp_rebrand_2.png" alt="Web home — claims and policies" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;object-position:top;cursor:zoom-in;" onclick="rmOpenLightbox(this)" />
+            <p class="rm-screen__label">Claims &amp; policies</p>
+          </div>
+          <div class="rm-screen" data-reveal>
+            <img src="uploads/zp_rebrand_12.png" alt="Web home — personalized section" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;object-position:top;cursor:zoom-in;" onclick="rmOpenLightbox(this)" />
+            <p class="rm-screen__label">Personalized home</p>
+          </div>
+          <div class="rm-screen" data-reveal>
+            <img src="uploads/iOS_Home-216c1e92.jpg" alt="Mobile home — iOS" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;object-position:top;cursor:zoom-in;" onclick="rmOpenLightbox(this)" />
+            <p class="rm-screen__label">Home</p>
+          </div>
+          <div class="rm-screen" data-reveal>
+            <img src="uploads/Screenshot 2026-07-13 at 8.24.11 PM.png" alt="Profile flow — Android" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;object-position:top;cursor:zoom-in;" onclick="rmOpenLightbox(this)" />
+            <p class="rm-screen__label">Profile</p>
+          </div>
+          <div class="rm-screen" data-reveal>
+            <img src="uploads/Screenshot 2026-07-13 at 8.24.27 PM.png" alt="iOS home variations" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;object-position:top;cursor:zoom-in;" onclick="rmOpenLightbox(this)" />
+            <p class="rm-screen__label">Cards</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9 · Key Design Decisions -->
+      <section class="cs-section" data-reveal>
+        <p class="cs-label">Key Design Decisions</p>
+        <h2 class="cs-section-title">Design thinking, not deliverables</h2>
+        <div class="rm-decisions">
+          <div class="rm-decision" data-reveal>
+            <div>
+              <p class="rm-decision__title">Making insurance feel approachable</p>
+              <p class="rm-decision__body">Plain language, warm colour, and friendly iconography replaced legal-sounding labels, without losing precision.</p>
+            </div>
+            <div class="rm-decision__visual">
+              <img src="uploads/zp_rebrand_2-0d0f6555.png" alt="Approachable interface example" />
+            </div>
+          </div>
+          <div class="rm-decision" data-reveal>
+            <div>
+              <p class="rm-decision__title">Balancing simplicity with information density</p>
+              <p class="rm-decision__body">Policies carry real complexity. Progressive disclosure keeps the surface calm while the detail stays one tap away.</p>
+            </div>
+            <div class="rm-decision__visual">
+              <img src="uploads/Screenshot 2026-07-14 at 1.28.05 AM.png" alt="Progressive disclosure example" />
+            </div>
+          </div>
+          <div class="rm-decision" data-reveal>
+            <div>
+              <p class="rm-decision__title">Designing for trust</p>
+              <p class="rm-decision__body">Clear status, honest timelines, and no dead ends, especially in claims, where anxiety is highest.</p>
+            </div>
+            <div class="rm-decision__visual">
+              <img src="uploads/01_Home_desktop.png" alt="Trust-driven interface showing clear status and messaging" />
+            </div>
+          </div>
+          <div class="rm-decision" data-reveal>
+            <div>
+              <p class="rm-decision__title">Creating consistency between web and mobile</p>
+              <p class="rm-decision__body">One token set, one component library, so every touchpoint feels like the same product.</p>
+            </div>
+            <div class="rm-decision__visual">
+              <img src="uploads/Screenshot 2026-07-14 at 1.36.47 AM.png" alt="Consistency across web and mobile platforms" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 · Outcome -->
+      <section class="cs-section" data-reveal>
+        <p class="cs-label">Outcome</p>
+        <h2 class="cs-section-title">Designing beyond interfaces</h2>
+        <div class="rm-outcome">
+          <div class="rm-outcome__item" data-reveal>Trust designed into every critical moment</div>
+          <div class="rm-outcome__item" data-reveal>One visual language across web and mobile</div>
+          <div class="rm-outcome__item" data-reveal>Responsive thinking from the first sketch</div>
+          <div class="rm-outcome__item" data-reveal>A design system the team could grow</div>
+          <div class="rm-outcome__item" data-reveal>Closer collaboration between brand and product</div>
+          <div class="rm-outcome__item" data-reveal>An experience that feels human</div>
+        </div>
+      </section>
+
+      <nav class="cs-nav" aria-label="Case studies">
+        <a href="case-02.html" class="cs-nav__item">
+          <span class="cs-nav__dir">← Previous</span>
+          <span class="cs-nav__title">Brokerage Growth AI</span>
+          <span class="cs-nav__sub">GYDE health · Lead PD</span>
+        </a>
+        <a href="case-04.html" class="cs-nav__item">
+          <span class="cs-nav__dir">Next →</span>
+          <span class="cs-nav__title">Enterprise User Management</span>
+          <span class="cs-nav__sub">TalentReef · Lead PD</span>
+        </a>
+      </nav>
+
+    </div>
+
+    <!-- Lightbox -->
+    <div class="rm-lightbox" id="rmLightbox">
+      <button class="rm-lightbox__close" onclick="rmCloseLightbox()" aria-label="Close">&#10005;</button>
+      <button class="rm-lightbox__nav rm-lightbox__nav--prev" onclick="event.stopPropagation();rmLightboxNav(-1)" aria-label="Previous">&#8592;</button>
+      <button class="rm-lightbox__nav rm-lightbox__nav--next" onclick="event.stopPropagation();rmLightboxNav(1)" aria-label="Next">&#8594;</button>
+      <img class="rm-lightbox__img" id="rmLightboxImg" alt="" />
+    </div>
+
+        <section class="contact-block">
+      <div>
+        <div class="contact-block__eyebrow">[ Let's talk ]</div>
+        <h2 class="contact-block__title">Great products<br />don't happen by accident.</h2>
+        <p class="contact-block__sub">Let's build one together.</p>
+        <p class="contact-block__intro">Whether you're hiring, building, or simply exchanging ideas, my inbox is always open.</p>
+      </div>
+      <div class="contact-block__right">
+        <div class="contact-block__email-label">Email</div>
+        <div class="contact-block__email-row">
+          <a class="contact-block__email-text" href="mailto:ingridvalderaurday@gmail.com" aria-label="Email Ingrid">ingridvalderaurday@gmail.com</a>
+          <button class="contact-block__copy-btn" data-copy-email aria-label="Copy email">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy
+          </button>
+        </div>
+        <div class="contact-block__rows">
+          <div class="contact-block__row">
+            <span class="contact-block__row-key">Status</span>
+            <span class="contact-block__status-val"><span class="contact-block__status-dot"></span>Full-time · Contract · Consulting</span>
+          </div>
+          <a class="contact-block__row" href="https://www.linkedin.com/in/ingridvaldera/" target="_blank" rel="noopener">
+            <span class="contact-block__row-key">LinkedIn</span>
+            <span class="contact-block__row-val">/in/ingridvaldera ↗</span>
+          </a>
+          <div class="contact-block__row">
+            <span class="contact-block__row-key">Location</span>
+            <span class="contact-block__row-val">Toronto, ON</span>
+          </div>
+        </div>
+      </div>
+    </section>
+        <footer class="footer">
+      <span>© 2026 — Ingrid Valdera Urday</span>
+      <span>v.2026.04</span>
+      <span>Built in Toronto, ON</span>
+    </footer>
+  </main>
+    <script src="pill-nav.js"></script>
+  <script src="theme-toggle.js"></script>
+  <script src="email-copy.js"></script>
+  <script>
+    /* ── Reveal on scroll ── */
+    (function() {
+      const els = document.querySelectorAll('[data-reveal]');
+      if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('is-in')); return; }
+      const io = new IntersectionObserver(entries => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach((e, i) => {
+        e.style.transitionDelay = (i % 4) * 60 + 'ms';
+        io.observe(e);
+      });
+    })();
+
+    /* ── Lightbox ── */
+    let rmLbImages = [];
+    let rmLbIndex = 0;
+    function rmCollectImages() {
+      rmLbImages = Array.from(document.querySelectorAll('img[onclick*="rmOpenLightbox"]'));
+    }
+    function rmOpenLightbox(el) {
+      rmCollectImages();
+      rmLbIndex = rmLbImages.indexOf(el);
+      rmShowLightbox();
+    }
+    function rmShowLightbox() {
+      const img = rmLbImages[rmLbIndex];
+      const lbImg = document.getElementById('rmLightboxImg');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbImg.style.animation = 'none';
+      void lbImg.offsetWidth;
+      lbImg.style.animation = '';
+      document.getElementById('rmLightbox').classList.add('is-open');
+    }
+    function rmCloseLightbox() {
+      document.getElementById('rmLightbox').classList.remove('is-open');
+    }
+    function rmLightboxNav(dir) {
+      rmLbIndex = (rmLbIndex + dir + rmLbImages.length) % rmLbImages.length;
+      rmShowLightbox();
+    }
+    document.getElementById('rmLightbox').addEventListener('click', function(e) {
+      if (e.target === this) rmCloseLightbox();
+    });
+    document.addEventListener('keydown', e => {
+      const lb = document.getElementById('rmLightbox');
+      if (!lb.classList.contains('is-open')) return;
+      if (e.key === 'Escape') rmCloseLightbox();
+      if (e.key === 'ArrowLeft') rmLightboxNav(-1);
+      if (e.key === 'ArrowRight') rmLightboxNav(1);
+    });
+    (function() {
+      const lb = document.getElementById('rmLightbox');
+      let sx = 0;
+      lb.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+      lb.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - sx;
+        if (Math.abs(dx) > 50) rmLightboxNav(dx < 0 ? 1 : -1);
+      }, { passive: true });
+    })();
+
+    /* ── Gallery carousel ── */
+    (function() {
+      const track = document.getElementById('rmGalTrack');
+      const prev = document.getElementById('rmGalPrev');
+      const next = document.getElementById('rmGalNext');
+      if (!track) return;
+      function itemWidth() {
+        const item = track.querySelector('.rm-gallery__item');
+        return item ? item.offsetWidth + 16 : 300;
+      }
+      function update() {
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        prev.classList.toggle('is-visible', track.scrollLeft > 8);
+        next.classList.toggle('is-visible', maxScroll > 8 && track.scrollLeft < maxScroll - 8);
+      }
+      prev.addEventListener('click', () => track.scrollBy({ left: -itemWidth(), behavior: 'smooth' }));
+      next.addEventListener('click', () => track.scrollBy({ left: itemWidth(), behavior: 'smooth' }));
+      track.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+      // Keyboard
+      track.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); track.scrollBy({ left: -itemWidth(), behavior: 'smooth' }); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); track.scrollBy({ left: itemWidth(), behavior: 'smooth' }); }
+      });
+      // Mouse drag
+      let isDown = false, startX = 0, startScroll = 0, moved = false;
+      track.addEventListener('pointerdown', e => {
+        if (e.pointerType !== 'mouse') return;
+        isDown = true; moved = false;
+        startX = e.clientX; startScroll = track.scrollLeft;
+        track.classList.add('is-dragging');
+      });
+      window.addEventListener('pointermove', e => {
+        if (!isDown) return;
+        const dx = e.clientX - startX;
+        if (Math.abs(dx) > 4) moved = true;
+        track.scrollLeft = startScroll - dx;
+      });
+      window.addEventListener('pointerup', () => {
+        isDown = false;
+        track.classList.remove('is-dragging');
+      });
+      // Prevent click-open after drag
+      track.addEventListener('click', e => {
+        if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; }
+      }, true);
+    })();
+  </script>
+</body>
+</html>

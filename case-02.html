@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <script>try{var t=localStorage.getItem('iv-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brokerage Growth AI — GYDE health · Ingrid Valdera</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600;700;800&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="site.css" />
+  <link rel="stylesheet" href="case-study.css" />
+  <style>
+    /* ── Editorial two-column hero ── */
+    .cs-hero2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 140px 64px 100px;
+      background: var(--bg);
+      margin-bottom: 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .cs-hero2__eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cs-hero2__eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: var(--line);
+      flex-shrink: 0;
+    }
+    .cs-hero2__title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(38px, 4.5vw, 68px);
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin: 0 0 20px;
+    }
+    .cs-hero2__title em {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--rosewood-2);
+    }
+    .cs-hero2__desc {
+      font-size: 17px;
+      line-height: 1.72;
+      color: var(--cool-gray);
+      margin: 0 0 32px;
+      max-width: 48ch;
+    }
+    .cs-hero2__meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin: 0 0 40px;
+      border-top: 1px solid var(--line);
+    }
+    .cs-hero2__meta-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .cs-hero2__meta-item dt {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .cs-hero2__meta-item dd {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 0;
+    }
+    .cs-hero2__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background: var(--ink);
+      color: var(--bg);
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .cs-hero2__cta:hover {
+      background: var(--rosewood-2);
+      transform: translateY(-1px);
+    }
+    .cs-hero2__right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cs-hero2__browser {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12), 0 24px 64px rgba(0,0,0,0.18);
+      transition: transform 0.4s cubic-bezier(.2,.65,.3,1), box-shadow 0.4s ease;
+    }
+    .cs-hero2__browser:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.14), 0 32px 80px rgba(0,0,0,0.22);
+    }
+    .cs-hero2__browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+    .cs-hero2__dots { display: flex; gap: 6px; flex-shrink: 0; }
+    .cs-hero2__dots span { width: 10px; height: 10px; border-radius: 50%; display: block; }
+    .cs-hero2__dots span:nth-child(1) { background: #FF5F57; }
+    .cs-hero2__dots span:nth-child(2) { background: #FEBC2E; }
+    .cs-hero2__dots span:nth-child(3) { background: #28C840; }
+    .cs-hero2__url {
+      flex: 1;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 4px 10px;
+      margin: 0 48px;
+      letter-spacing: 0.02em;
+    }
+    .cs-hero2__screen { max-height: 460px; overflow: hidden; }
+    .cs-hero2__screen img { width: 100%; display: block; object-fit: cover; object-position: top; }
+    .cs-hero2__protolink {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .cs-hero2__protolink:hover { border-color: var(--rosewood-2); color: var(--rosewood-2); transform: translateY(-1px); }
+    .cs-hero2__ctarow { display: flex; gap: 12px; flex-wrap: wrap; }
+    /* AI workflow — editorial horizontal timeline */
+    .wf2 { margin-top: 48px; position: relative; }
+    .wf2__nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      font-size: 16px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 3;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+    }
+    .wf2__nav.is-visible { opacity: 0.92; pointer-events: auto; }
+    .wf2__nav:hover { opacity: 1; background: var(--paper); }
+    .wf2__nav--prev { left: -12px; }
+    .wf2__nav--next { right: -12px; }
+    @media (max-width: 720px) {
+      .wf2__nav { display: none; }
+    }
+    .wf2__track {
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      padding-bottom: 20px;
+    }
+    .wf2__step {
+      flex: 0 0 236px;
+      min-width: 0;
+      padding-right: 28px;
+      position: relative;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .wf2__step.is-in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .wf2__step { opacity: 1; transform: none; transition: none; }
+    }
+    .wf2__marker {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      position: relative;
+    }
+    .wf2__num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--rosewood-2);
+      flex-shrink: 0;
+    }
+    .wf2__marker::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+    .wf2__step:last-child .wf2__marker::after { display: none; }
+    .wf2__title {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin: 0 0 8px;
+    }
+    .wf2__desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--cool-gray);
+      margin: 0 0 14px;
+      max-width: 26ch;
+    }
+    .wf2__pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .wf2__pill {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.04em;
+      padding: 4px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: var(--paper);
+      white-space: nowrap;
+    }
+    @media (max-width: 720px) {
+      .wf2__track { flex-direction: column; overflow: visible; gap: 0; }
+      .wf2__step {
+        flex: 1 1 auto;
+        padding: 0 0 32px 28px;
+        border-left: 1px solid var(--line);
+      }
+      .wf2__step:last-child { border-left-color: transparent; padding-bottom: 0; }
+      .wf2__marker::after { display: none; }
+      .wf2__marker::before {
+        content: "";
+        position: absolute;
+        left: -33px;
+        top: 4px;
+        width: 9px; height: 9px;
+        border-radius: 50%;
+        background: var(--rosewood-2);
+      }
+      .wf2__desc { max-width: none; }
+    }
+    /* Impact cards */
+    .cs-impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .cs-impact-card {
+      padding: 24px;
+      border: 1px solid var(--line-soft);
+      border-radius: 12px;
+      background: var(--paper);
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+    @media (max-width: 600px) {
+      .wf-h-row { flex-wrap: nowrap; }
+    }
+    /* Carousel */
+    .cs-carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      margin: 32px 0 12px;
+    }
+    .cs-carousel__track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(.4,0,.2,1);
+      will-change: transform;
+    }
+    .cs-carousel__slide { flex: 0 0 100%; min-width: 0; }
+    .cs-carousel__slide img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: top;
+      max-height: 520px;
+      cursor: zoom-in;
+    }
+    .cs-carousel__btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, opacity 0.2s;
+      opacity: 0.85;
+      z-index: 2;
+    }
+    .cs-carousel__btn:hover { opacity: 1; background: var(--paper); }
+    .cs-carousel__btn--prev { left: 12px; }
+    .cs-carousel__btn--next { right: 12px; }
+    .cs-carousel__dots {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      background: rgba(0,0,0,0.35);
+      padding: 6px 10px;
+      border-radius: 999px;
+      backdrop-filter: blur(4px);
+    }
+    .cs-carousel__dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: background 0.2s;
+      border: none;
+    }
+    .cs-carousel__dot.is-active { background: #fff; }
+    /* Lightbox */
+    .cs-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.88);
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      cursor: zoom-out;
+    }
+    .cs-lightbox.is-open { display: flex; }
+    .cs-lightbox__img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 8px;
+      object-fit: contain;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+    }
+    .cs-lightbox__close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    @media (max-width: 860px) {
+      .cs-hero2 { grid-template-columns: 1fr; padding: 120px 40px 80px; gap: 56px; }
+      .cs-hero2__right { order: -1; }
+      .cs-hero2__url { margin: 0 24px; }
+    }
+    @media (max-width: 600px) {
+      .cs-hero2 { padding: 100px 24px 64px; }
+      .cs-hero2__meta { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="description" content="Case study by Ingrid Valdera, Senior Product Designer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Brokerage Growth AI — GYDE health · Ingrid Valdera" />
+  <meta property="og:description" content="Case study by Ingrid Valdera, Senior Product Designer." />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Brokerage Growth AI — GYDE health · Ingrid Valdera" />
+  <meta name="twitter:description" content="Case study by Ingrid Valdera, Senior Product Designer." />
+  <meta name="twitter:image" content="/assets/og-image.png" />
+</head>
+<body>
+  <!-- ─── Fixed pill nav ─── -->
+  <nav class="pill-nav" id="pill-nav" aria-label="Primary">
+    <div class="pill-nav__inner">
+      <a href="index.html" class="pill-nav__brand">
+        <img class="logo-dark" src="uploads/InValdur.-ab41dde3.svg" alt="InValdur." style="height: 16px; display: block;" />
+        <img class="logo-light" src="uploads/darkInValdur..svg" alt="InValdur." style="height: 16px; display: none;" />
+      </a>
+      <div class="pill-nav__links">
+        <button class="theme-toggle" aria-label="Switch theme">
+          <svg class="t-moon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M11.2 9.1A5 5 0 0 1 4.9 2.8c0-.3-.3-.5-.5-.4A6 6 0 1 0 11.6 9.6c.1-.2-.1-.5-.4-.5Z" fill="currentColor"/></svg>
+          <svg class="t-sun" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="2.6" fill="currentColor"/><path d="M7 .8v1.4M7 11.8V13.2M.8 7h1.4M11.8 7h1.4M2.7 2.7l1 1M10.3 10.3l1 1M10.3 3.7l1-1M2.7 11.3l1-1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <span class="t-lbl-light">Light</span>
+          <span class="t-lbl-dark">Dark</span>
+        </button>
+        <div class="pill-nav__item">
+          <a href="index.html#cases" class="pill-nav__link is-active" aria-haspopup="true" aria-expanded="false">Projects <i class="pill-nav__caret"></i></a>
+          <div class="pill-nav__dropdown">
+            <a href="case-01.html" class="pill-nav__drop-link" style="font-size: 14px">Investment Technology</a>
+            <a href="case-02.html" class="pill-nav__drop-link" style="font-size: 14px">Brokerage Growth AI</a>
+            <a href="case-03.html" class="pill-nav__drop-link" style="font-size: 14px">Insurance Platform</a>
+            <a href="case-04.html" class="pill-nav__drop-link" style="font-size: 14px">Talent Management</a>
+          </div>
+        </div>
+        <a href="about.html" class="pill-nav__link">About me</a>
+        <a href="contact.html" class="pill-nav__link">Let's talk!</a>
+        <a href="https://www.linkedin.com/in/ingridvaldera/" target="_blank" rel="noopener" class="pill-nav__link">LinkedIn</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <header class="cs-hero2">
+      <div class="cs-hero2__left">
+        <p class="cs-hero2__eyebrow">002 — AI Powered Insurance Brokerage · B2B</p>
+        <h1 class="cs-hero2__title">Helping Insurance Brokers Grow Revenue <em>with AI</em></h1>
+        <p class="cs-hero2__desc">Designed AI-powered workflows that helped insurance brokers identify cross-selling opportunities, review member data faster, and make confident recommendations.</p>
+        <dl class="cs-hero2__meta">
+          <div class="cs-hero2__meta-item"><dt>Industry</dt><dd>Health Insurance</dd></div>
+          <div class="cs-hero2__meta-item"><dt>Role</dt><dd>Lead Product Designer</dd></div>
+          <div class="cs-hero2__meta-item"><dt>Platform</dt><dd>Enterprise SaaS</dd></div>
+          <div class="cs-hero2__meta-item"><dt>Duration</dt><dd>4 months</dd></div>
+        </dl>
+        <div class="cs-hero2__ctarow">
+          <a href="#overview" class="cs-hero2__cta">Read Case Study ↓</a>
+          <a href="#" class="cs-hero2__protolink">View Interactive Prototype ↗</a>
+        </div>
+      </div>
+      <div class="cs-hero2__right">
+        <div class="cs-hero2__browser">
+          <div class="cs-hero2__browser-bar">
+            <div class="cs-hero2__dots"><span></span><span></span><span></span></div>
+            <div class="cs-hero2__url">app.gydehealth.com</div>
+          </div>
+          <div class="cs-hero2__screen">
+            <img src="uploads/Campaign - List.png" alt="GYDE health platform interface" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="cs-page">
+
+      <section class="cs-section" id="overview">
+        <p class="cs-label">Overview</p>
+        <h2 class="cs-section-title">A platform built around AI-powered recommendations</h2>
+        <p class="cs-body">GYDE Health is an AI-powered platform that helps insurance brokers identify overlooked opportunities across employee benefits. Instead of manually reviewing complex member data, brokers receive AI-assisted recommendations that accelerate decision-making.</p>
+        <dl class="cs-meta-grid">
+          <div class="cs-meta-grid__cell"><dt>Client</dt><dd>GYDE health</dd></div>
+          <div class="cs-meta-grid__cell"><dt>My Role</dt><dd>Lead Product Designer</dd></div>
+          <div class="cs-meta-grid__cell"><dt>Type</dt><dd>Enterprise SaaS</dd></div>
+          <div class="cs-meta-grid__cell"><dt>Approach</dt><dd>Desk Research, AI Prototyping, Analytics</dd></div>
+        </dl>
+        <div class="cs-carousel" id="ovCarousel">
+          <div class="cs-carousel__track">
+            <div class="cs-carousel__slide">
+              <img src="uploads/GYDE-Thumbail-1-5fe286a3.png" alt="Dashboard" onclick="csLightbox(this)" />
+            </div>
+            <div class="cs-carousel__slide">
+              <img src="uploads/Campaign - List.png" alt="Overview" onclick="csLightbox(this)" />
+            </div>
+            <div class="cs-carousel__slide">
+              <img src="uploads/GYDE-01.png" alt="Ask Gia — assistant home" onclick="csLightbox(this)" />
+            </div>
+            <div class="cs-carousel__slide">
+              <img src="uploads/First message - Resources tooltip-71a832b8.png" alt="Ask Gia — plan resources tooltip" onclick="csLightbox(this)" />
+            </div>
+            <div class="cs-carousel__slide">
+              <img src="uploads/gyde-02.png" alt="Campaign details — Welcome Call 2026" onclick="csLightbox(this)" />
+            </div>
+            <div class="cs-carousel__slide">
+              <img src="uploads/GYDE-04.png" alt="Client plans — recommendations with gap scores" onclick="csLightbox(this)" />
+            </div>
+          </div>
+          <button class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous" onclick="csCarouselMove('ovCarousel',-1)">&#8592;</button>
+          <button class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next" onclick="csCarouselMove('ovCarousel',1)">&#8594;</button>
+          <div class="cs-carousel__dots"></div>
+        </div>
+        <p class="cs-caption">Representative workflow from the GYDE Health platform. Sensitive client information has been anonymized and modified for confidentiality. Click any image to explore it in detail.</p>
+      </section>
+
+      <section class="cs-section">
+        <p class="cs-label">The Opportunity</p>
+        <h2 class="cs-section-title">Brokers were leaving revenue on the table</h2>
+        <p class="cs-body">Insurance brokers spent hours reviewing fragmented data across multiple employer groups. Valuable cross-selling opportunities often went unnoticed because the information was difficult to interpret quickly.</p>
+        <div class="cs-pullquote">
+          <p class="cs-pullquote__label">The challenge</p>
+          <p class="cs-pullquote__text">"How might we surface meaningful opportunities before brokers even begin searching?"</p>
+        </div>
+      </section>
+
+      <section class="cs-section">
+        <p class="cs-label">Research &amp; Insights</p>
+        <h2 class="cs-section-title">Understanding the broker's workflow</h2>
+        <p class="cs-body">I ran stakeholder workshops, broker interviews, journey mapping, and existing workflow analysis to understand how brokers actually work. Three core insights drove the design:</p>
+        <div class="cs-cards">
+          <div class="cs-card">
+            <p class="cs-card__num">01</p>
+            <p class="cs-card__title">Pain points</p>
+            <p class="cs-card__body">Brokers were sceptical of black-box AI. Recommendations needed to show their reasoning, why this client, why now.</p>
+          </div>
+          <div class="cs-card">
+            <p class="cs-card__num">02</p>
+            <p class="cs-card__title">Business opportunities</p>
+            <p class="cs-card__body">Creating a targeted outreach campaign took hours. Brokers needed a workflow that could take them from insight to send in minutes.</p>
+          </div>
+          <div class="cs-card">
+            <p class="cs-card__num">03</p>
+            <p class="cs-card__title">AI opportunities</p>
+            <p class="cs-card__body">Most brokers had no visibility into which campaigns performed. Closing the feedback loop was as important as launching campaigns.</p>
+          </div>
+        </div>
+        <div class="cs-img-wrap">
+          <img src="uploads/Screenshot 2026-07-13 at 5.36.02 PM.png" alt="Journey map and research board" style="width:100%;display:block;border-radius:8px;cursor:zoom-in;" onclick="csLightbox(this)" />
+        </div>
+        <p class="cs-caption">Journey map and research board mapping the end-to-end broker workflow.</p>
+      </section>
+
+      <section class="cs-section">
+        <p class="cs-label">Designing Trust Into AI</p>
+        <h2 class="cs-section-title">AI recommendations are only valuable when users understand why they exist</h2>
+        <p class="cs-body">We designed every recommendation to be explainable, reviewable, and editable before taking action.</p>
+        <div class="cs-cards">
+          <div class="cs-card">
+            <p class="cs-card__title">Recommendation cards</p>
+            <p class="cs-card__body">Every suggestion pairs the recommendation with the data behind it, so brokers can verify before acting.</p>
+          </div>
+          <div class="cs-card">
+            <p class="cs-card__title">Confidence indicators</p>
+            <p class="cs-card__body">A visible confidence score sets expectations and helps brokers prioritize which opportunities to act on first.</p>
+          </div>
+          <div class="cs-card">
+            <p class="cs-card__title">Human review</p>
+            <p class="cs-card__body">Feedback collection lets brokers flag inaccurate recommendations, improving the model and building trust over time.</p>
+          </div>
+        </div>
+        <div class="cs-img-wrap">
+          <img src="uploads/2Client - Details.jpg" alt="AI recommendation experience and explanation panel" style="width:100%;display:block;border-radius:8px;cursor:zoom-in;" onclick="csLightbox(this)" />
+        </div>
+        <p class="cs-caption">The recommendation experience — explanation panels and conversation flow for reviewing AI reasoning.</p>
+      </section>
+
+      <section class="cs-section">
+        <p class="cs-label">From Insight to Action</p>
+        <h2 class="cs-section-title">Guiding brokers through action, not just recommendations</h2>
+        <p class="cs-body">Instead of only showing recommendations, the platform guides brokers through taking action immediately — from opportunity details to a ready-to-send campaign.</p>
+        <div class="cs-cards">
+          <div class="cs-card">
+            <p class="cs-card__title">Opportunity details</p>
+            <p class="cs-card__body">Employer profile and AI summary surfaced together, so brokers have full context in one view.</p>
+          </div>
+          <div class="cs-card">
+            <p class="cs-card__title">Suggested next steps</p>
+            <p class="cs-card__body">Clear, ranked actions remove the guesswork of what to do with a recommendation.</p>
+          </div>
+          <div class="cs-card">
+            <p class="cs-card__title">Campaign builder</p>
+            <p class="cs-card__body">Turns an approved recommendation into an outreach campaign in a few clicks.</p>
+          </div>
+        </div>
+        <div class="cs-carousel" id="actionCarousel">
+          <div class="cs-carousel__track">
+            <div class="cs-carousel__slide">
+              <img src="uploads/Client - Details.svg" alt="Opportunity details — client overview" onclick="csLightbox(this)" />
+            </div>
+            <div class="cs-carousel__slide">
+              <img src="uploads/Client - Details-1.svg" alt="Employer profile" onclick="csLightbox(this)" />
+            </div>
+            <div class="cs-carousel__slide">
+              <img src="uploads/Client - Details-2.svg" alt="AI summary" onclick="csLightbox(this)" />
+            </div>
+            <div class="cs-carousel__slide">
+              <img src="uploads/Client - Details-3.svg" alt="Suggested next steps" onclick="csLightbox(this)" />
+            </div>
+            <div class="cs-carousel__slide">
+              <img src="uploads/Client - Details-4.svg" alt="Campaign builder — setup" onclick="csLightbox(this)" />
+            </div>
+            <div class="cs-carousel__slide">
+              <img src="uploads/Client - Details-5.svg" alt="Campaign builder — review and send" onclick="csLightbox(this)" />
+            </div>
+          </div>
+          <button class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous" onclick="csCarouselMove('actionCarousel',-1)">&#8592;</button>
+          <button class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next" onclick="csCarouselMove('actionCarousel',1)">&#8594;</button>
+          <div class="cs-carousel__dots"></div>
+        </div>
+        <p class="cs-caption">Representative workflow from the GYDE Health platform. Sensitive client information has been anonymized and modified for confidentiality. Click any image to explore it in detail.</p>
+      </section>
+
+      <section class="cs-section cs-workflow-section">
+        <p class="cs-label">AI Workflow</p>
+        <h2 class="cs-section-title">AI accelerated the process, not the decisions</h2>
+        <p class="cs-body" style="max-width:62ch;">AI helps me research faster, prototype quickly and explore more ideas. Every product decision is still guided by user needs, stakeholder alignment, engineering constraints and business goals.</p>
+        <div class="wf2">
+          <button class="wf2__nav wf2__nav--prev" id="wf2Prev" aria-label="Scroll left">&#8592;</button>
+          <button class="wf2__nav wf2__nav--next" id="wf2Next" aria-label="Scroll right">&#8594;</button>
+          <div class="wf2__track" id="wf2Track">
+            <div class="wf2__step">
+              <div class="wf2__marker"><span class="wf2__num">01</span></div>
+              <p class="wf2__title">Research</p>
+              <p class="wf2__desc">Understand the problem before opening Figma.</p>
+              <div class="wf2__pills"><span class="wf2__pill">FigJam</span><span class="wf2__pill">User interviews</span><span class="wf2__pill">Existing data</span><span class="wf2__pill">Dovetail</span></div>
+            </div>
+            <div class="wf2__step">
+              <div class="wf2__marker"><span class="wf2__num">02</span></div>
+              <p class="wf2__title">AI Exploration</p>
+              <p class="wf2__desc">Use AI to accelerate research, challenge assumptions and generate multiple directions.</p>
+              <div class="wf2__pills"><span class="wf2__pill">Claude</span><span class="wf2__pill">ChatGPT</span><span class="wf2__pill">Cursor</span></div>
+            </div>
+            <div class="wf2__step">
+              <div class="wf2__marker"><span class="wf2__num">03</span></div>
+              <p class="wf2__title">Rapid Concepts</p>
+              <p class="wf2__desc">Create low and high fidelity concepts quickly and explore multiple solutions.</p>
+              <div class="wf2__pills"><span class="wf2__pill">Figma</span><span class="wf2__pill">Figma Make</span><span class="wf2__pill">Cursor</span></div>
+            </div>
+            <div class="wf2__step">
+              <div class="wf2__marker"><span class="wf2__num">04</span></div>
+              <p class="wf2__title">Stakeholder Alignment</p>
+              <p class="wf2__desc">Present concepts, discuss trade-offs and refine ideas with product and business teams.</p>
+              <div class="wf2__pills"><span class="wf2__pill">Figma</span><span class="wf2__pill">FigJam</span><span class="wf2__pill">Workshops</span></div>
+            </div>
+            <div class="wf2__step">
+              <div class="wf2__marker"><span class="wf2__num">05</span></div>
+              <p class="wf2__title">Engineering Validation</p>
+              <p class="wf2__desc">Review feasibility, edge cases and technical constraints with developers.</p>
+              <div class="wf2__pills"><span class="wf2__pill">Figma</span><span class="wf2__pill">Cursor</span><span class="wf2__pill">Slack</span></div>
+            </div>
+            <div class="wf2__step">
+              <div class="wf2__marker"><span class="wf2__num">06</span></div>
+              <p class="wf2__title">Design System</p>
+              <p class="wf2__desc">Create reusable components, improve existing patterns and document decisions.</p>
+              <div class="wf2__pills"><span class="wf2__pill">Figma Components</span><span class="wf2__pill">Variables</span><span class="wf2__pill">Design Tokens</span></div>
+            </div>
+            <div class="wf2__step">
+              <div class="wf2__marker"><span class="wf2__num">07</span></div>
+              <p class="wf2__title">Delivery</p>
+              <p class="wf2__desc">Prepare production-ready files, documentation and developer handoff.</p>
+              <div class="wf2__pills"><span class="wf2__pill">Figma</span><span class="wf2__pill">Jira</span><span class="wf2__pill">Notion</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-section">
+        <p class="cs-label">Design System</p>
+        <h2 class="cs-section-title">Building consistency while moving fast</h2>
+        <p class="cs-body">As new AI experiences were introduced, I expanded the Design System with reusable components, interaction patterns, and documentation to help engineering deliver consistently.</p>
+        <div class="cs-img-wrap">
+          <img src="uploads/Screenshot 2026-07-13 at 6.24.10 PM.png" alt="Design System — component library, tokens, and variants" style="width:100%;display:block;border-radius:8px;cursor:zoom-in;" onclick="csLightbox(this)" />
+        </div>
+        <p class="cs-caption">Component library, tokens, new components, variants, and documentation. Click to expand.</p>
+      </section>
+
+      <section class="cs-section">
+        <p class="cs-label">Impact</p>
+        <h2 class="cs-section-title">What changed for brokers</h2>
+        <div class="cs-impact-grid">
+          <div class="cs-impact-card">Faster opportunity discovery</div>
+          <div class="cs-impact-card">Greater confidence in AI recommendations</div>
+          <div class="cs-impact-card">More scalable broker workflows</div>
+          <div class="cs-impact-card">Reusable AI interaction patterns</div>
+          <div class="cs-impact-card">Improved collaboration between Product and Engineering</div>
+        </div>
+      </section>
+
+      <section class="cs-section">
+        <p class="cs-label">Next Steps &amp; Learnings</p>
+        <h2 class="cs-section-title">What I took away</h2>
+        <div class="cs-learnings">
+          <div class="cs-learning">
+            <div class="cs-learning__icon">🤖</div>
+            <div class="cs-learning__text">
+              <p class="cs-learning__title">AI works best when it explains itself</p>
+              <p class="cs-learning__body">For AI in professional contexts, showing the reasoning behind a recommendation is as important as the recommendation itself. Users adopted the tool faster when they could see why.</p>
+            </div>
+          </div>
+          <div class="cs-learning">
+            <div class="cs-learning__icon">🤝</div>
+            <div class="cs-learning__text">
+              <p class="cs-learning__title">Enterprise AI succeeds through trust, not automation</p>
+              <p class="cs-learning__body">Brokers measured success in time saved, but only once they trusted the reasoning behind each suggestion. Trust had to be designed for, not assumed.</p>
+            </div>
+          </div>
+          <div class="cs-learning">
+            <div class="cs-learning__icon">⚙️</div>
+            <div class="cs-learning__text">
+              <p class="cs-learning__title">Great AI experiences are designed with engineering, not after engineering</p>
+              <p class="cs-learning__body">Looping in engineering during exploration, not just at handoff, kept the recommendation model's real constraints part of the design from day one.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <nav class="cs-nav" aria-label="Case studies">
+        <a href="case-01.html" class="cs-nav__item">
+          <span class="cs-nav__dir">← Previous</span>
+          <span class="cs-nav__title">Connect Platform</span>
+          <span class="cs-nav__sub">Eckler · Lead PD</span>
+        </a>
+        <a href="case-03.html" class="cs-nav__item">
+          <span class="cs-nav__dir">Next →</span>
+          <span class="cs-nav__title">Insurance Platform</span>
+          <span class="cs-nav__sub">RIMAC · Product Designer</span>
+        </a>
+      </nav>
+
+    </div>
+        <div class="cs-lightbox" id="csLightbox" onclick="this.classList.remove('is-open')">
+      <button class="cs-lightbox__close" onclick="document.getElementById('csLightbox').classList.remove('is-open')" aria-label="Close">&#10005;</button>
+      <img class="cs-lightbox__img" id="csLightboxImg" alt="" />
+    </div>
+        <section class="contact-block">
+      <div>
+        <div class="contact-block__eyebrow">[ Let's talk ]</div>
+        <h2 class="contact-block__title">Great products<br />don't happen by accident.</h2>
+        <p class="contact-block__sub">Let's build one together.</p>
+        <p class="contact-block__intro">Whether you're hiring, building, or simply exchanging ideas, my inbox is always open.</p>
+      </div>
+      <div class="contact-block__right">
+        <div class="contact-block__email-label">Email</div>
+        <div class="contact-block__email-row">
+          <a class="contact-block__email-text" href="mailto:ingridvalderaurday@gmail.com" aria-label="Email Ingrid">ingridvalderaurday@gmail.com</a>
+          <button class="contact-block__copy-btn" data-copy-email aria-label="Copy email">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy
+          </button>
+        </div>
+        <div class="contact-block__rows">
+          <div class="contact-block__row">
+            <span class="contact-block__row-key">Status</span>
+            <span class="contact-block__status-val"><span class="contact-block__status-dot"></span>Full-time · Contract · Consulting</span>
+          </div>
+          <a class="contact-block__row" href="https://www.linkedin.com/in/ingridvaldera/" target="_blank" rel="noopener">
+            <span class="contact-block__row-key">LinkedIn</span>
+            <span class="contact-block__row-val">/in/ingridvaldera ↗</span>
+          </a>
+          <div class="contact-block__row">
+            <span class="contact-block__row-key">Location</span>
+            <span class="contact-block__row-val">Toronto, ON</span>
+          </div>
+        </div>
+      </div>
+    </section>
+        <footer class="footer">
+      <span>© 2026 — Ingrid Valdera Urday</span>
+      <span>v.2026.04</span>
+      <span>Built in Toronto, ON</span>
+    </footer>
+  </main>
+    <script src="pill-nav.js"></script>
+  <script src="theme-toggle.js"></script>
+  <script src="email-copy.js"></script>
+  <script>
+    function csLightbox(el) {
+      const img = el.tagName === 'IMG' ? el : el.querySelector('img');
+      document.getElementById('csLightboxImg').src = img.src;
+      document.getElementById('csLightboxImg').alt = img.alt;
+      document.getElementById('csLightbox').classList.add('is-open');
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') document.getElementById('csLightbox').classList.remove('is-open');
+    });
+    function csCarouselMove(id, dir) {
+      const el = document.getElementById(id);
+      const track = el.querySelector('.cs-carousel__track');
+      const slides = el.querySelectorAll('.cs-carousel__slide');
+      const total = slides.length;
+      let cur = parseInt(track.dataset.cur || '0');
+      cur = (cur + dir + total) % total;
+      track.dataset.cur = cur;
+      track.style.transform = `translateX(-${cur * 100}%)`;
+      el.querySelectorAll('.cs-carousel__dot').forEach((d,i) => d.classList.toggle('is-active', i === cur));
+    }
+    document.querySelectorAll('.cs-carousel').forEach(el => {
+      const slides = el.querySelectorAll('.cs-carousel__slide');
+      const dotsEl = el.querySelector('.cs-carousel__dots');
+      slides.forEach((_,i) => {
+        const d = document.createElement('span');
+        d.className = 'cs-carousel__dot' + (i===0?' is-active':'');
+        d.onclick = () => { el.querySelector('.cs-carousel__track').dataset.cur = i-1; csCarouselMove(el.id, 1); };
+        dotsEl.appendChild(d);
+      });
+      let startX = 0;
+      el.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
+      el.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) csCarouselMove(el.id, dx < 0 ? 1 : -1);
+      }, {passive:true});
+    });
+    // Workflow scroll-in animation
+    (function() {
+      const steps = document.querySelectorAll('.wf2__step');
+      if (!steps.length || !('IntersectionObserver' in window)) {
+        steps.forEach(s => s.classList.add('is-in'));
+        return;
+      }
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const idx = Array.from(steps).indexOf(entry.target);
+            entry.target.style.transitionDelay = (idx * 70) + 'ms';
+            entry.target.classList.add('is-in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      steps.forEach(s => io.observe(s));
+    })();
+    // Workflow horizontal scroll arrows
+    (function() {
+      const track = document.getElementById('wf2Track');
+      const prev = document.getElementById('wf2Prev');
+      const next = document.getElementById('wf2Next');
+      if (!track || !prev || !next) return;
+      function update() {
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        prev.classList.toggle('is-visible', track.scrollLeft > 8);
+        next.classList.toggle('is-visible', maxScroll > 8 && track.scrollLeft < maxScroll - 8);
+      }
+      prev.addEventListener('click', () => track.scrollBy({ left: -300, behavior: 'smooth' }));
+      next.addEventListener('click', () => track.scrollBy({ left: 300, behavior: 'smooth' }));
+      track.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
+</body>
+</html>

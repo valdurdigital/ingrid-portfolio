@@ -1,0 +1,1194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <script>try{var t=localStorage.getItem('iv-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Connect — Investment Planning Tool · Ingrid Valdera</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600;700;800&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="site.css" />
+  <link rel="stylesheet" href="case-study.css" />
+  <style>
+    /* ── Editorial two-column hero ── */
+    .cs-hero2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 140px 64px 100px;
+      background: var(--bg);
+      margin-bottom: 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .cs-hero2__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .cs-hero2__logo-mark {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--rosewood);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .cs-hero2__logo-name {
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    .cs-hero2__logo-client {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .cs-hero2__eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cs-hero2__eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: var(--line);
+      flex-shrink: 0;
+    }
+    .cs-hero2__title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(38px, 4.5vw, 68px);
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin: 0 0 20px;
+    }
+    .cs-hero2__title em {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--rosewood-2);
+    }
+    .cs-hero2__desc {
+      font-size: 17px;
+      line-height: 1.72;
+      color: var(--cool-gray);
+      margin: 0 0 32px;
+      max-width: 48ch;
+    }
+    .cs-hero2__meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin: 0 0 40px;
+      border-top: 1px solid var(--line);
+    }
+    .cs-hero2__meta-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .cs-hero2__meta-item dt {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .cs-hero2__meta-item dd {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 0;
+    }
+    .cs-hero2__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background: var(--ink);
+      color: var(--bg);
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .cs-hero2__cta:hover {
+      background: var(--rosewood-2);
+      transform: translateY(-1px);
+    }
+    /* Browser frame */
+    .cs-hero2__right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cs-hero2__browser {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow:
+        0 4px 16px rgba(0,0,0,0.12),
+        0 24px 64px rgba(0,0,0,0.18);
+      transition: transform 0.4s cubic-bezier(.2,.65,.3,1), box-shadow 0.4s ease;
+    }
+    .cs-hero2__browser:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 8px 24px rgba(0,0,0,0.14),
+        0 32px 80px rgba(0,0,0,0.22);
+    }
+    .cs-hero2__browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+    .cs-hero2__dots {
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .cs-hero2__dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--line);
+      display: block;
+    }
+    .cs-hero2__dots span:nth-child(1) { background: #FF5F57; }
+    .cs-hero2__dots span:nth-child(2) { background: #FEBC2E; }
+    .cs-hero2__dots span:nth-child(3) { background: #28C840; }
+    .cs-hero2__url {
+      flex: 1;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 4px 10px;
+      margin: 0 48px;
+      letter-spacing: 0.02em;
+    }
+    .cs-hero2__screen {
+      max-height: 460px;
+      overflow: hidden;
+    }
+    .cs-hero2__screen img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: top;
+    }
+    /* ── Workflow ── */
+    .cs-workflow-section { padding-bottom: 0; }
+    .wf-ai-bar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 14px 20px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      margin: 32px 0 40px;
+      background: var(--paper);
+    }
+    .wf-ai-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+    .wf-ai-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+    .wf-chip {
+      padding: 5px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .wf-chip:hover, .wf-chip.is-active {
+      background: var(--rosewood);
+      border-color: var(--rosewood);
+      color: #fff;
+    }
+    /* Timeline */
+    .wf-timeline {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      overflow-x: auto;
+      padding-bottom: 24px;
+      scrollbar-width: none;
+    }
+    .wf-timeline::-webkit-scrollbar { display: none; }
+    .wf-stage {
+      flex: 0 0 180px;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
+      transition: flex-basis 0.45s cubic-bezier(.4,0,.2,1), background 0.25s;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .wf-stage.is-active {
+      flex-basis: 340px;
+      background: var(--bg);
+    }
+    .wf-stage.is-dim { opacity: 0.35; }
+    .wf-stage__head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 20px 20px 16px;
+    }
+    .wf-stage__icon {
+      width: 32px; height: 32px;
+      flex-shrink: 0;
+      color: var(--rosewood-2);
+    }
+    .wf-stage__icon svg { width: 100%; height: 100%; }
+    .wf-stage__num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+    .wf-stage__name {
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+    .wf-stage__body {
+      padding: 0 20px 20px;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 0.35s 0.1s, max-height 0.45s cubic-bezier(.4,0,.2,1);
+    }
+    .wf-stage.is-active .wf-stage__body {
+      opacity: 1;
+      max-height: 600px;
+    }
+    .wf-stage__desc {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--cool-gray);
+      margin: 0 0 16px;
+    }
+    .wf-stage__cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .wf-stage__col-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 6px;
+    }
+    .wf-stage__body ul {
+      margin: 0 0 8px;
+      padding-left: 14px;
+    }
+    .wf-stage__body li {
+      font-size: 12px;
+      line-height: 1.7;
+      color: var(--cool-gray);
+    }
+    .wf-stage__tools, .wf-stage__collabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .wf-stage__tools span, .wf-stage__collabs span {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--cool-gray);
+      background: var(--paper);
+    }
+    /* Connectors */
+    .wf-connector {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      height: 64px;
+      padding: 0 4px;
+      margin-top: 10px;
+    }
+    .wf-connector__line {
+      width: 28px;
+      height: 1px;
+      background: var(--line);
+      position: relative;
+    }
+    .wf-connector__line::after {
+      content: '';
+      position: absolute;
+      right: -4px;
+      top: -3px;
+      border: 3px solid transparent;
+      border-left-color: var(--line);
+    }
+    /* Summary */
+    .wf-summary {
+      margin-top: 40px;
+      padding: 36px 40px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .wf-summary__title {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      margin: 0;
+      font-style: italic;
+    }
+    .wf-summary__body {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--cool-gray);
+      margin: 0;
+    }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .wf-timeline { flex-direction: column; overflow-x: visible; }
+      .wf-stage { flex-basis: auto !important; width: 100%; }
+      .wf-stage.is-active { flex-basis: auto !important; }
+      .wf-connector { height: 24px; width: 100%; justify-content: center; }
+      .wf-connector__line { width: 1px; height: 24px; background: var(--line); }
+      .wf-connector__line::after { right: -3px; top: auto; bottom: -4px; border-left-color: transparent; border-top-color: var(--line); }
+      .wf-summary { grid-template-columns: 1fr; }
+      .wf-ai-bar { border-radius: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .wf-stage, .wf-stage__body { transition: none; }
+    }
+    /* Image grid + lightbox */
+    .cs-img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .cs-img-grid__item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: zoom-in;
+      border: 1px solid var(--line);
+    }
+    .cs-img-grid__item img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      transition: transform 0.35s ease;
+    }
+    .cs-img-grid__item:hover img { transform: scale(1.03); }
+    .cs-img-grid__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 12px;
+      transition: background 0.25s;
+    }
+    .cs-img-grid__overlay span {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(0,0,0,0.6);
+      padding: 4px 10px;
+      border-radius: 999px;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .cs-img-grid__item:hover .cs-img-grid__overlay { background: rgba(0,0,0,0.08); }
+    .cs-img-grid__item:hover .cs-img-grid__overlay span { opacity: 1; }
+    /* Lightbox */
+    .cs-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.88);
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      cursor: zoom-out;
+    }
+    .cs-lightbox.is-open { display: flex; }
+    .cs-lightbox__img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 8px;
+      object-fit: contain;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+    }
+    .cs-lightbox__close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    @media (max-width: 600px) {
+      .cs-img-grid { grid-template-columns: 1fr; }
+    }
+    /* Proto CTA */
+    .cs-proto-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 32px 0;
+      padding: 28px 32px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
+    }
+    .cs-proto-cta__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+      padding: 12px 24px;
+      background: var(--ink);
+      color: var(--bg);
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .cs-proto-cta__btn:hover {
+      background: var(--rosewood-2);
+      transform: translateY(-1px);
+    }
+    .cs-proto-cta__note {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+    [data-theme="light"] .cs-proto-cta__btn { background: #1C1A1A; color: #F7F5F2; }
+    [data-theme="light"] .cs-proto-cta__btn:hover { background: var(--rosewood-2); }
+    /* Carousel */
+    .cs-carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      margin-bottom: 12px;
+    }
+    .cs-carousel__track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(.4,0,.2,1);
+      will-change: transform;
+    }
+    .cs-carousel__slide {
+      flex: 0 0 100%;
+      min-width: 0;
+    }
+    .cs-carousel__slide img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 520px;
+    }
+    .cs-carousel__btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, opacity 0.2s;
+      opacity: 0.85;
+      z-index: 2;
+    }
+    .cs-carousel__btn:hover { opacity: 1; background: var(--paper); }
+    .cs-carousel__btn--prev { left: 12px; }
+    .cs-carousel__btn--next { right: 12px; }
+    .cs-carousel__dots {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      background: rgba(0,0,0,0.35);
+      padding: 6px 10px;
+      border-radius: 999px;
+      backdrop-filter: blur(4px);
+    }
+    .cs-carousel__dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: background 0.2s;
+      border: none;
+    }
+    .cs-carousel__dot.is-active { background: #fff; }
+    [data-theme="light"] .cs-carousel__dot { background: rgba(255,255,255,0.5); }
+    [data-theme="light"] .cs-carousel__dot.is-active { background: #fff; }
+    #overview { padding-top: 100px; }
+      background: #1C1A1A;
+      color: #F7F5F2;
+    }
+    [data-theme="light"] .cs-hero2__cta:hover { background: var(--rosewood-2); }
+    /* Responsive */
+    @media (max-width: 860px) {
+      .cs-hero2 { grid-template-columns: 1fr; padding: 120px 40px 80px; gap: 56px; }
+      .cs-hero2__right { order: -1; }
+      .cs-hero2__url { margin: 0 24px; }
+    }
+    @media (max-width: 600px) {
+      .cs-hero2 { padding: 100px 24px 64px; }
+      .cs-hero2__meta { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="description" content="Case study by Ingrid Valdera, Senior Product Designer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Connect — Investment Planning Tool · Ingrid Valdera" />
+  <meta property="og:description" content="Case study by Ingrid Valdera, Senior Product Designer." />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Connect — Investment Planning Tool · Ingrid Valdera" />
+  <meta name="twitter:description" content="Case study by Ingrid Valdera, Senior Product Designer." />
+  <meta name="twitter:image" content="/assets/og-image.png" />
+</head>
+<body>
+  <!-- ─── Fixed pill nav ─── -->
+  <nav class="pill-nav" id="pill-nav" aria-label="Primary">
+    <div class="pill-nav__inner">
+      <a href="index.html" class="pill-nav__brand">
+        <img class="logo-dark" src="uploads/InValdur.-ab41dde3.svg" alt="InValdur." style="height: 16px; display: block;" />
+        <img class="logo-light" src="uploads/darkInValdur..svg" alt="InValdur." style="height: 16px; display: none;" />
+      </a>
+      <div class="pill-nav__links">
+        <button class="theme-toggle" aria-label="Switch theme">
+          <svg class="t-moon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M11.2 9.1A5 5 0 0 1 4.9 2.8c0-.3-.3-.5-.5-.4A6 6 0 1 0 11.6 9.6c.1-.2-.1-.5-.4-.5Z" fill="currentColor"/></svg>
+          <svg class="t-sun" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="2.6" fill="currentColor"/><path d="M7 .8v1.4M7 11.8V13.2M.8 7h1.4M11.8 7h1.4M2.7 2.7l1 1M10.3 10.3l1 1M10.3 3.7l1-1M2.7 11.3l1-1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <span class="t-lbl-light">Light</span>
+          <span class="t-lbl-dark">Dark</span>
+        </button>
+        <div class="pill-nav__item">
+          <a href="index.html#cases" class="pill-nav__link is-active" aria-haspopup="true" aria-expanded="false">Projects <i class="pill-nav__caret"></i></a>
+          <div class="pill-nav__dropdown">
+            <a href="case-01.html" class="pill-nav__drop-link" style="font-size: 14px">Investment Technology</a>
+            <a href="case-02.html" class="pill-nav__drop-link" style="font-size: 14px">Brokerage Growth AI</a>
+            <a href="case-03.html" class="pill-nav__drop-link" style="font-size: 14px">Insurance Platform</a>
+            <a href="case-04.html" class="pill-nav__drop-link" style="font-size: 14px">Talent Management</a>
+          </div>
+        </div>
+        <a href="about.html" class="pill-nav__link">About me</a>
+        <a href="contact.html" class="pill-nav__link">Let's talk!</a>
+        <a href="https://www.linkedin.com/in/ingridvaldera/" target="_blank" rel="noopener" class="pill-nav__link">LinkedIn</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <!-- Hero -->
+    <header class="cs-hero2">
+      <!-- Left: copy -->
+      <div class="cs-hero2__left">
+        <p class="cs-hero2__eyebrow">001 — Fintech · Enterprise Software</p>
+        <h1 class="cs-hero2__title">Simplifying Investment Analysis for <em>Enterprise Consultants</em></h1>
+        <p class="cs-hero2__desc">Connect is Eckler’s enterprise investment platform used by actuaries and consultants to model assumptions and manage pension portfolios. I joined as Lead Product Designer to reduce friction without losing depth.</p>
+        <dl class="cs-hero2__meta">
+          <div class="cs-hero2__meta-item"><dt>Client</dt><dd>Eckler — Investment Team</dd></div>
+          <div class="cs-hero2__meta-item"><dt>Role</dt><dd>Lead Product Designer</dd></div>
+          <div class="cs-hero2__meta-item"><dt>Industry</dt><dd>Fintech · Enterprise SaaS</dd></div>
+          <div class="cs-hero2__meta-item"><dt>Platform</dt><dd>Web Application</dd></div>
+        </dl>
+        <a href="#overview" class="cs-hero2__cta">Read Case Study ↓</a>
+      </div>
+      <!-- Right: screenshot -->
+      <div class="cs-hero2__right">
+        <div class="cs-hero2__browser">
+          <div class="cs-hero2__browser-bar">
+            <div class="cs-hero2__dots"><span></span><span></span><span></span></div>
+            <div class="cs-hero2__url">connect.eckler.ca</div>
+          </div>
+          <div class="cs-hero2__screen">
+            <img src="uploads/connect1.jpg" alt="Connect investment platform interface" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="cs-page">
+
+      <!-- Overview -->
+      <section class="cs-section" id="overview">
+        <p class="cs-label">Overview</p>
+        <h2 class="cs-section-title">A platform that speaks the language of pension finance</h2>
+        <p class="cs-body">Connect is an enterprise web application used by consultants and actuarial teams at Eckler to build and manage financial models and assumptions for pension and investment analysis. The platform serves as the backbone for strategic decisions affecting millions in managed assets.</p>
+        <p class="cs-body">I joined as Lead Product Designer to help the team evolve Connect from a functional but complex tool into a more intuitive, scalable platform, reducing friction for expert users without dumbing down the sophistication they need.</p>
+        <dl class="cs-meta-grid">
+          <div class="cs-meta-grid__cell"><dt>Client</dt><dd>Eckler — Investment Team</dd></div>
+          <div class="cs-meta-grid__cell"><dt>My Role</dt><dd>Lead Product Designer</dd></div>
+          <div class="cs-meta-grid__cell"><dt>Type</dt><dd>Internal Software</dd></div>
+          <div class="cs-meta-grid__cell"><dt>Approach</dt><dd>Prototyping with AI, Research, Testing</dd></div>
+        </dl>
+      </section>
+
+      <!-- Problem -->
+      <section class="cs-section">
+        <p class="cs-label">Problem Statement</p>
+        <h2 class="cs-section-title">Complex tools for complex work, but complexity was getting in the way</h2>
+        <p class="cs-body">Actuarial teams were spending significant time navigating the interface rather than focusing on analysis. Key workflows, building assumption sets, running scenarios, and reviewing outputs, required too many steps and too much cognitive load.</p>
+        <div class="cs-pullquote">
+          <p class="cs-pullquote__label">The challenge</p>
+          <p class="cs-pullquote__text">"How might we reduce the interface overhead so expert users can focus on the financial thinking, not the tool?"</p>
+        </div>
+        <p class="cs-body">Users were experienced actuaries and investment consultants, not typical software users. The design challenge wasn't simplification for its own sake, but intentional clarity: remove friction where it existed, preserve depth where it was needed.</p>
+      </section>
+
+      <!-- Research -->
+      <section class="cs-section">
+        <p class="cs-label">Research &amp; Insights</p>
+        <h2 class="cs-section-title">Understanding how experts actually work</h2>
+        <p class="cs-body">I conducted contextual interviews and workflow observation sessions with consultants and actuarial analysts to map the real-world usage patterns. Key insights shaped the design direction:</p>
+        <div class="cs-cards">
+          <div class="cs-card">
+            <p class="cs-card__num">01</p>
+            <p class="cs-card__title">Mental model mismatch</p>
+            <p class="cs-card__body">Users thought in terms of pension plans and asset classes, but the UI was organised around system objects. Navigation felt backwards.</p>
+          </div>
+          <div class="cs-card">
+            <p class="cs-card__num">02</p>
+            <p class="cs-card__title">Repetitive configuration</p>
+            <p class="cs-card__body">Setting up assumption sets for new clients required repeating steps that could be templated. Teams had built workarounds in spreadsheets.</p>
+          </div>
+          <div class="cs-card">
+            <p class="cs-card__num">03</p>
+            <p class="cs-card__title">Unclear data provenance</p>
+            <p class="cs-card__body">Users weren't always sure which version of an assumption was active, leading to double-checking and reduced confidence in outputs.</p>
+          </div>
+        </div>
+        <div class="cs-img-wrap">
+          <img src="uploads/Screenshot 2026-07-10 at 3.42.02 PM.png" alt="Research synthesis — user journey mapping" style="width:100%;display:block;border-radius:8px;" />
+        </div>
+        <p class="cs-caption">User journey mapping session with the investment team, identifying friction points across the assumption-building workflow.</p>
+      </section>
+
+      <!-- Design Process -->
+      <section class="cs-section">
+        <p class="cs-label">NEW IMPLEMENTATION</p>
+        <h2 class="cs-section-title">Rapid prototyping with AI to explore and validate directions fast</h2>
+        <p class="cs-body">I used AI-assisted prototyping to dramatically accelerate iteration cycles. Rather than spending days on high-fidelity mockups, I could generate and test multiple layout directions with stakeholders in a single session.</p>
+        <p class="cs-body">Key design decisions explored in prototyping:</p>
+        <div class="cs-proto-cta">
+          <a href="#" class="cs-proto-cta__btn" id="protoLink">Launch Interactive Prototype ↗</a>
+          <p class="cs-proto-cta__note">This demo recreates the product using anonymized data and representative workflows. No proprietary client information is displayed.</p>
+        </div>
+        <div class="cs-cards">
+          <div class="cs-card">
+            <p class="cs-card__title">Information hierarchy</p>
+            <p class="cs-card__body">Reorganising the navigation around client plans rather than system modules — matching the mental model of users.</p>
+          </div>
+          <div class="cs-card">
+            <p class="cs-card__title">Assumption templates</p>
+            <p class="cs-card__body">A template library that lets consultants save, reuse, and version assumption sets — eliminating repetitive setup.</p>
+          </div>
+          <div class="cs-card">
+            <p class="cs-card__title">Status &amp; provenance</p>
+            <p class="cs-card__body">Clear visual indicators showing which assumption version is active and when it was last modified — building confidence in outputs.</p>
+          </div>
+        </div>
+        <div class="cs-img-wrap">
+          <img src="uploads/Screenshot 2026-07-10 at 3.13.00 PM.png" alt="Prototyping iterations — navigation redesign" style="width:100%;display:block;border-radius:8px;" />
+        </div>
+        <p class="cs-caption" style="margin-bottom: 32px;">Early prototype iterations exploring a client-centric navigation model.</p>
+        <!-- Carousel -->
+        <div class="cs-carousel" id="dsCarousel">
+          <div class="cs-carousel__track">
+            <div class="cs-carousel__slide">
+              <img src="uploads/Month Picker-32703e57.jpg" alt="Month Picker Component" />
+            </div>
+            <div class="cs-carousel__slide">
+              <img src="uploads/Date Picker-d1ce54cd.jpg" alt="Date Picker Component" />
+            </div>
+          </div>
+          <button class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous" onclick="csCarouselMove('dsCarousel',-1)">&#8592;</button>
+          <button class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next" onclick="csCarouselMove('dsCarousel',1)">&#8594;</button>
+          <div class="cs-carousel__dots" id="dsCarouselDots"></div>
+        </div>
+        <p class="cs-caption">Concept of reusable components and adding new components to Design System.</p>
+      </section>
+
+      <!-- Design Workflow -->
+      <section class="cs-section cs-workflow-section">
+        <p class="cs-label">UPDATED DESIGN PROCESS</p>
+        <h2 class="cs-section-title">My AI-Assisted Product Design Workflow</h2>
+        <p class="cs-body" style="max-width:60ch;">How I move from ambiguity to shipped products by combining research, collaboration, AI, and product thinking.</p>
+
+        <!-- AI chips bar -->
+        <div class="wf-ai-bar">
+          <span class="wf-ai-label">AI accelerates every stage</span>
+          <div class="wf-ai-chips">
+            <button class="wf-chip" data-stages="0,1,2,4">Claude</button>
+            <button class="wf-chip" data-stages="1,2">Cursor</button>
+            <button class="wf-chip" data-stages="1">Figma Make</button>
+            <button class="wf-chip" data-stages="3,4,5">Figma</button>
+            <button class="wf-chip" data-stages="0,2,4">Notion AI</button>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="wf-timeline" id="wfTimeline">
+
+          <div class="wf-stage" data-index="0">
+            <div class="wf-stage__head">
+              <div class="wf-stage__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="3" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="21"/><line x1="3" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="21" y2="12"/></svg>
+              </div>
+              <span class="wf-stage__num">01</span>
+              <span class="wf-stage__name">Understand</span>
+            </div>
+            <div class="wf-stage__body">
+              <p class="wf-stage__desc">Every project starts by understanding the business, users, technical constraints, and product goals.</p>
+              <div class="wf-stage__cols">
+                <div>
+                  <p class="wf-stage__col-label">Activities</p>
+                  <ul><li>Stakeholder interviews</li><li>Product kickoff</li><li>User research</li><li>Journey mapping</li><li>Competitive analysis</li></ul>
+                </div>
+                <div>
+                  <p class="wf-stage__col-label">Outputs</p>
+                  <ul><li>Research summary</li><li>Problem statement</li><li>Opportunities</li></ul>
+                  <p class="wf-stage__col-label" style="margin-top:12px;">Tools</p>
+                  <div class="wf-stage__tools"><span>Dovetail</span><span>FigJam</span><span>Notion</span><span>Claude</span></div>
+                </div>
+              </div>
+              <p class="wf-stage__col-label">Collaborators</p>
+              <div class="wf-stage__collabs"><span>Product</span><span>Business</span><span>Engineering</span><span>SMEs</span></div>
+            </div>
+          </div>
+
+          <div class="wf-connector"><div class="wf-connector__line"></div></div>
+
+          <div class="wf-stage" data-index="1">
+            <div class="wf-stage__head">
+              <div class="wf-stage__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+              </div>
+              <span class="wf-stage__num">02</span>
+              <span class="wf-stage__name">Explore</span>
+            </div>
+            <div class="wf-stage__body">
+              <p class="wf-stage__desc">I rapidly explore multiple solutions using AI-assisted ideation before investing time into high-fidelity design.</p>
+              <div class="wf-stage__cols">
+                <div>
+                  <p class="wf-stage__col-label">Activities</p>
+                  <ul><li>Brainstorming</li><li>User flows</li><li>Information architecture</li><li>Wireframes</li><li>AI exploration</li></ul>
+                </div>
+                <div>
+                  <p class="wf-stage__col-label">Outputs</p>
+                  <ul><li>Concept directions</li><li>Early prototypes</li><li>User flows</li></ul>
+                  <p class="wf-stage__col-label" style="margin-top:12px;">Tools</p>
+                  <div class="wf-stage__tools"><span>Claude</span><span>Cursor</span><span>Figma Make</span><span>FigJam</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wf-connector"><div class="wf-connector__line"></div></div>
+
+          <div class="wf-stage" data-index="2">
+            <div class="wf-stage__head">
+              <div class="wf-stage__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <span class="wf-stage__num">03</span>
+              <span class="wf-stage__name">Validate</span>
+            </div>
+            <div class="wf-stage__body">
+              <p class="wf-stage__desc">Ideas are only valuable if they work for users, business, and engineering.</p>
+              <div class="wf-stage__cols">
+                <div>
+                  <p class="wf-stage__col-label">Activities</p>
+                  <ul><li>Workshop facilitation</li><li>Stakeholder reviews</li><li>Engineering reviews</li><li>Accessibility reviews</li><li>Iteration</li></ul>
+                </div>
+                <div>
+                  <p class="wf-stage__col-label">Outputs</p>
+                  <ul><li>Validated direction</li><li>Technical constraints</li><li>Prioritized solution</li></ul>
+                </div>
+              </div>
+              <p class="wf-stage__col-label">Collaborators</p>
+              <div class="wf-stage__collabs"><span>Engineering</span><span>Architecture</span><span>Product</span><span>Business</span></div>
+            </div>
+          </div>
+
+          <div class="wf-connector"><div class="wf-connector__line"></div></div>
+
+          <div class="wf-stage" data-index="3">
+            <div class="wf-stage__head">
+              <div class="wf-stage__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              </div>
+              <span class="wf-stage__num">04</span>
+              <span class="wf-stage__name">Design</span>
+            </div>
+            <div class="wf-stage__body">
+              <p class="wf-stage__desc">Once the direction is validated, I design polished, scalable experiences ready for implementation.</p>
+              <div class="wf-stage__cols">
+                <div>
+                  <p class="wf-stage__col-label">Activities</p>
+                  <ul><li>High-fidelity UI</li><li>Interaction design</li><li>Component creation</li><li>Design Systems</li><li>Prototypes</li></ul>
+                </div>
+                <div>
+                  <p class="wf-stage__col-label">Outputs</p>
+                  <ul><li>Production-ready designs</li><li>Prototype</li><li>Documentation</li></ul>
+                  <p class="wf-stage__col-label" style="margin-top:12px;">Tools</p>
+                  <div class="wf-stage__tools"><span>Figma</span><span>Design System</span><span>Tokens</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wf-connector"><div class="wf-connector__line"></div></div>
+
+          <div class="wf-stage" data-index="4">
+            <div class="wf-stage__head">
+              <div class="wf-stage__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+              </div>
+              <span class="wf-stage__num">05</span>
+              <span class="wf-stage__name">Document</span>
+            </div>
+            <div class="wf-stage__body">
+              <p class="wf-stage__desc">I document everything needed so the team can move confidently from design to development.</p>
+              <div class="wf-stage__cols">
+                <div>
+                  <p class="wf-stage__col-label">Activities</p>
+                  <ul><li>Component documentation</li><li>Specifications</li><li>Edge cases</li><li>Annotations</li><li>Acceptance criteria</li></ul>
+                </div>
+                <div>
+                  <p class="wf-stage__col-label">Outputs</p>
+                  <ul><li>Design documentation</li><li>Updated Design System</li><li>Implementation guidelines</li></ul>
+                  <p class="wf-stage__col-label" style="margin-top:12px;">Tools</p>
+                  <div class="wf-stage__tools"><span>Notion</span><span>Claude</span><span>Figma</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wf-connector"><div class="wf-connector__line"></div></div>
+
+          <div class="wf-stage" data-index="5">
+            <div class="wf-stage__head">
+              <div class="wf-stage__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L8.5 8.5 2 9.27l5 4.87-1.18 6.88L12 17.77l6.18 3.25L17 14.14l5-4.87-6.5-.77z"/></svg>
+              </div>
+              <span class="wf-stage__num">06</span>
+              <span class="wf-stage__name">Deliver</span>
+            </div>
+            <div class="wf-stage__body">
+              <p class="wf-stage__desc">Design doesn't end at handoff. I stay involved through implementation to ensure quality.</p>
+              <div class="wf-stage__cols">
+                <div>
+                  <p class="wf-stage__col-label">Activities</p>
+                  <ul><li>Developer handoff</li><li>Design QA</li><li>Bug reviews</li><li>Iteration</li><li>Launch support</li></ul>
+                </div>
+                <div>
+                  <p class="wf-stage__col-label">Outputs</p>
+                  <ul><li>Shipped feature</li><li>Quality improvements</li><li>Continuous iteration</li></ul>
+                  <p class="wf-stage__col-label" style="margin-top:12px;">Collaborators</p>
+                  <div class="wf-stage__collabs"><span>Engineering</span><span>QA</span><span>Product</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Summary card -->
+        <div class="wf-summary">
+          <p class="wf-summary__title">Design is never linear.</p>
+          <p class="wf-summary__body">While these stages provide structure, every project is iterative. I continuously move between research, exploration, validation, and delivery to create solutions that work for users, business, and engineering alike.</p>
+        </div>
+
+      </section>
+
+      <!-- Final Solution -->
+      <section class="cs-section">
+        <p class="cs-label">Final Solution</p>
+        <h2 class="cs-section-title">A more confident, faster way to model investment assumptions</h2>
+        <p class="cs-body">The redesigned Connect experience reduced the steps required for core workflows while preserving the depth that expert users depend on. Key improvements shipped:</p>
+        <div class="cs-img-grid">
+          <div class="cs-img-grid__item" onclick="csLightbox(this)">
+            <img src="uploads/Data Feed- User Entered - Value Filled-259381a5.jpg" alt="Data Feed — User Entered Values" />
+            <div class="cs-img-grid__overlay"><span>View full size</span></div>
+          </div>
+          <div class="cs-img-grid__item" onclick="csLightbox(this)">
+            <img src="uploads/Plans - Plan details - Plan and Member Behaviour - Plan Overview - Assets and Contributions-11c5f8e6.jpg" alt="Plan Overview — Assets and Contributions" />
+            <div class="cs-img-grid__overlay"><span>View full size</span></div>
+          </div>
+          <div class="cs-img-grid__item" onclick="csLightbox(this)">
+            <img src="uploads/Plans - Plan details - Manager Fund - Value Add-1a074596.jpg" alt="Manager Fund — Value Add" />
+            <div class="cs-img-grid__overlay"><span>View full size</span></div>
+          </div>
+          <div class="cs-img-grid__item" onclick="csLightbox(this)">
+            <img src="uploads/Plans - Plan details - Manager Fund - Time Period Returns-b578910c.jpg" alt="Manager Fund — Time Period Returns" />
+            <div class="cs-img-grid__overlay"><span>View full size</span></div>
+          </div>
+        </div>
+        <!-- Lightbox -->
+        <div class="cs-lightbox" id="csLightbox" onclick="this.classList.remove('is-open')">
+          <button class="cs-lightbox__close" onclick="document.getElementById('csLightbox').classList.remove('is-open')" aria-label="Close">&#10005;</button>
+          <img class="cs-lightbox__img" id="csLightboxImg" alt="" />
+        </div>
+        <p class="cs-caption">The updated Connect interface — reorganised around client plans with clear assumption status indicators.</p>
+      </section>
+
+      <!-- Learnings -->
+      <section class="cs-section">
+        <p class="cs-label">Next Steps &amp; Learnings</p>
+        <h2 class="cs-section-title">What I took away</h2>
+        <div class="cs-learnings">
+          <div class="cs-learning">
+            <div class="cs-learning__icon">🧠</div>
+            <div class="cs-learning__text">
+              <p class="cs-learning__title">Domain depth is a design asset</p>
+              <p class="cs-learning__body">The more I understood pension finance, the better my design decisions became. Investing time in domain learning — not just user research — unlocked solutions that felt native to the work.</p>
+            </div>
+          </div>
+          <div class="cs-learning">
+            <div class="cs-learning__icon">⚡</div>
+            <div class="cs-learning__text">
+              <p class="cs-learning__title">AI prototyping changed the tempo</p>
+              <p class="cs-learning__body">Using AI to generate prototype variations cut iteration time dramatically. Stakeholders could react to real options instead of abstract descriptions — decisions happened faster and with more confidence.</p>
+            </div>
+          </div>
+          <div class="cs-learning">
+            <div class="cs-learning__icon">🔄</div>
+            <div class="cs-learning__text">
+              <p class="cs-learning__title">Test with the real users, not proxies</p>
+              <p class="cs-learning__body">Early rounds of testing with product managers rather than actual actuaries led us down a wrong path. Getting in front of real users sooner would have saved two sprint cycles.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Case nav -->
+      <nav class="cs-nav" aria-label="Case studies">
+        <a href="index.html#cases" class="cs-nav__item">
+          <span class="cs-nav__dir">← Back</span>
+          <span class="cs-nav__title">All projects</span>
+        </a>
+        <a href="case-02.html" class="cs-nav__item">
+          <span class="cs-nav__dir">Next →</span>
+          <span class="cs-nav__title">Brokerage Growth AI</span>
+          <span class="cs-nav__sub">GYDE health · Lead PD</span>
+        </a>
+      </nav>
+
+    </div>
+
+        <section class="contact-block">
+      <div>
+        <div class="contact-block__eyebrow">[ Let's talk ]</div>
+        <h2 class="contact-block__title">Great products<br />don't happen by accident.</h2>
+        <p class="contact-block__sub">Let's build one together.</p>
+        <p class="contact-block__intro">Whether you're hiring, building, or simply exchanging ideas, my inbox is always open.</p>
+      </div>
+      <div class="contact-block__right">
+        <div class="contact-block__email-label">Email</div>
+        <div class="contact-block__email-row">
+          <a class="contact-block__email-text" href="mailto:ingridvalderaurday@gmail.com" aria-label="Email Ingrid">ingridvalderaurday@gmail.com</a>
+          <button class="contact-block__copy-btn" data-copy-email aria-label="Copy email">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy
+          </button>
+        </div>
+        <div class="contact-block__rows">
+          <div class="contact-block__row">
+            <span class="contact-block__row-key">Status</span>
+            <span class="contact-block__status-val"><span class="contact-block__status-dot"></span>Full-time · Contract · Consulting</span>
+          </div>
+          <a class="contact-block__row" href="https://www.linkedin.com/in/ingridvaldera/" target="_blank" rel="noopener">
+            <span class="contact-block__row-key">LinkedIn</span>
+            <span class="contact-block__row-val">/in/ingridvaldera ↗</span>
+          </a>
+          <div class="contact-block__row">
+            <span class="contact-block__row-key">Location</span>
+            <span class="contact-block__row-val">Toronto, ON</span>
+          </div>
+        </div>
+      </div>
+    </section>
+        <footer class="footer">
+      <span>© 2026 — Ingrid Valdera Urday</span>
+      <span>v.2026.04</span>
+      <span>Built in Toronto, ON</span>
+    </footer>
+  </main>
+    <script src="pill-nav.js"></script>
+  <script src="theme-toggle.js"></script>
+  <script src="email-copy.js"></script>
+  <script>
+    function csLightbox(el) {
+      const img = el.querySelector('img');
+      document.getElementById('csLightboxImg').src = img.src;
+      document.getElementById('csLightboxImg').alt = img.alt;
+      document.getElementById('csLightbox').classList.add('is-open');
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') document.getElementById('csLightbox').classList.remove('is-open');
+    });
+    // Workflow interactions
+    (function() {
+      const stages = document.querySelectorAll('.wf-stage');
+      const chips = document.querySelectorAll('.wf-chip');
+
+      function activateStage(index) {
+        stages.forEach((s, i) => {
+          s.classList.toggle('is-active', i === index);
+          s.classList.toggle('is-dim', index !== null && i !== index);
+        });
+      }
+
+      stages.forEach((s, i) => {
+        s.addEventListener('click', () => {
+          if (s.classList.contains('is-active')) {
+            activateStage(null);
+          } else {
+            activateStage(i);
+          }
+        });
+        s.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); s.click(); }
+        });
+        s.setAttribute('tabindex', '0');
+        s.setAttribute('role', 'button');
+      });
+
+      // AI chips
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          const active = chip.classList.toggle('is-active');
+          const highlighted = active
+            ? chip.dataset.stages.split(',').map(Number)
+            : null;
+          stages.forEach((s, i) => {
+            s.classList.toggle('is-dim', highlighted !== null && !highlighted.includes(i));
+            if (highlighted && highlighted.includes(i)) s.classList.remove('is-dim');
+          });
+          chips.forEach(c => { if (c !== chip) c.classList.remove('is-active'); });
+          if (!active) stages.forEach(s => s.classList.remove('is-dim'));
+        });
+      });
+
+      // Open first stage by default
+      activateStage(0);
+    })();
+  </script>
+  <script>
+    function csCarouselMove(id, dir) {
+      const el = document.getElementById(id);
+      const track = el.querySelector('.cs-carousel__track');
+      const slides = el.querySelectorAll('.cs-carousel__slide');
+      const total = slides.length;
+      let cur = parseInt(track.dataset.cur || '0');
+      cur = (cur + dir + total) % total;
+      track.dataset.cur = cur;
+      track.style.transform = `translateX(-${cur * 100}%)`;
+      el.querySelectorAll('.cs-carousel__dot').forEach((d,i) => d.classList.toggle('is-active', i === cur));
+    }
+    // Init dots
+    document.querySelectorAll('.cs-carousel').forEach(el => {
+      const slides = el.querySelectorAll('.cs-carousel__slide');
+      const dotsEl = el.querySelector('.cs-carousel__dots');
+      slides.forEach((_,i) => {
+        const d = document.createElement('span');
+        d.className = 'cs-carousel__dot' + (i===0?' is-active':'');
+        d.onclick = () => { el.querySelector('.cs-carousel__track').dataset.cur = i-1; csCarouselMove(el.id, 1); };
+        dotsEl.appendChild(d);
+      });
+      // Touch swipe
+      let startX = 0;
+      el.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
+      el.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) csCarouselMove(el.id, dx < 0 ? 1 : -1);
+      }, {passive:true});
+    });
+  </script>
+</body>
+</html>

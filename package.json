@@ -1,0 +1,11 @@
+{
+  "name": "ingrid-valdera-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static portfolio site — deployed as-is on Vercel (no build step required).",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site — no build required'",
+    "start": "npx serve ."
+  }
+}

@@ -1,0 +1,1195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <script>try{var t=localStorage.getItem('iv-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Enterprise User Management — TalentReef · Ingrid Valdera</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600;700;800&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="site.css" />
+  <link rel="stylesheet" href="case-study.css" />
+  <style>
+    /* ── Editorial two-column hero ── */
+    .cs-hero2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 140px 64px 100px;
+      background: var(--bg);
+      margin-bottom: 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .cs-hero2__eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cs-hero2__eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: var(--line);
+      flex-shrink: 0;
+    }
+    .cs-hero2__title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(38px, 4.5vw, 68px);
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin: 0 0 20px;
+    }
+    .cs-hero2__title em {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--rosewood-2);
+    }
+    .cs-hero2__desc {
+      font-size: 17px;
+      line-height: 1.72;
+      color: var(--cool-gray);
+      margin: 0 0 32px;
+      max-width: 48ch;
+    }
+    .cs-hero2__meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin: 0 0 40px;
+      border-top: 1px solid var(--line);
+    }
+    .cs-hero2__meta-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .cs-hero2__meta-item dt {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .cs-hero2__meta-item dd {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 0;
+    }
+    .cs-hero2__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background: var(--ink);
+      color: var(--bg);
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .cs-hero2__cta:hover {
+      background: var(--rosewood-2);
+      transform: translateY(-1px);
+    }
+    .cs-hero2__right { display: flex; align-items: center; justify-content: center; }
+    .cs-hero2__browser {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12), 0 24px 64px rgba(0,0,0,0.18);
+      transition: transform 0.4s cubic-bezier(.2,.65,.3,1), box-shadow 0.4s ease;
+    }
+    .cs-hero2__browser:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.14), 0 32px 80px rgba(0,0,0,0.22);
+    }
+    .cs-hero2__browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+    .cs-hero2__dots { display: flex; gap: 6px; flex-shrink: 0; }
+    .cs-hero2__dots span { width: 10px; height: 10px; border-radius: 50%; display: block; }
+    .cs-hero2__dots span:nth-child(1) { background: #FF5F57; }
+    .cs-hero2__dots span:nth-child(2) { background: #FEBC2E; }
+    .cs-hero2__dots span:nth-child(3) { background: #28C840; }
+    .cs-hero2__url {
+      flex: 1;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 4px 10px;
+      margin: 0 48px;
+      letter-spacing: 0.02em;
+    }
+    .cs-hero2__screen { max-height: 460px; overflow: hidden; }
+    .cs-hero2__screen img { width: 100%; display: block; object-fit: cover; object-position: top; }
+    @media (max-width: 860px) {
+      .cs-hero2 { grid-template-columns: 1fr; padding: 120px 40px 80px; gap: 56px; }
+      .cs-hero2__right { order: -1; }
+      .cs-hero2__url { margin: 0 24px; }
+    }
+    @media (max-width: 600px) {
+      .cs-hero2 { padding: 100px 24px 64px; }
+      .cs-hero2__meta { grid-template-columns: 1fr; }
+    }
+    /* ── Reveal animations ── */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s cubic-bezier(.2,.65,.3,1), transform 0.65s cubic-bezier(.2,.65,.3,1);
+    }
+    [data-reveal].is-in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] { opacity: 1; transform: none; transition: none; }
+    }
+    /* ── Challenge cards ── */
+    .tr-challenges {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 40px 0 8px;
+    }
+    .tr-challenge {
+      padding: 28px 24px;
+      border: 1px solid var(--line-soft);
+      border-radius: 14px;
+      background: var(--paper);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .tr-challenge:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.10); }
+    .tr-challenge__icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--rosewood-2);
+      margin-bottom: 16px;
+    }
+    .tr-challenge__title { font-family: var(--font-heading); font-size: 15px; font-weight: 600; color: var(--ink); margin: 0 0 6px; }
+    .tr-challenge__body { font-size: 13px; line-height: 1.55; color: var(--cool-gray); margin: 0; }
+    /* ── Diagrams ── */
+    .tr-diagram {
+      border: 1px solid var(--line-soft);
+      border-radius: 14px;
+      background: var(--paper);
+      padding: 36px;
+      margin: 36px 0 8px;
+    }
+    .tr-diagram__label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 24px;
+    }
+    .tr-tree { display: flex; flex-direction: column; align-items: center; gap: 0; }
+    .tr-node {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 10px 20px;
+      white-space: nowrap;
+    }
+    .tr-node--root { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .tr-tree__stem { width: 1px; height: 20px; background: var(--line); }
+    .tr-tree__row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+    .tr-tree__branch { display: flex; flex-direction: column; align-items: center; }
+    .tr-node__sub {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      color: var(--muted);
+      margin-top: 8px;
+      text-align: center;
+      line-height: 1.6;
+    }
+    /* ── Efficiency demos ── */
+    .tr-eff { display: flex; flex-direction: column; gap: 16px; margin: 40px 0 8px; }
+    .tr-eff__row {
+      display: grid;
+      grid-template-columns: 0.9fr 1.4fr;
+      gap: 28px;
+      align-items: center;
+      border: 1px solid var(--line-soft);
+      border-radius: 16px;
+      background: var(--paper);
+      padding: 32px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .tr-eff__row:hover { transform: translateY(-3px); box-shadow: 0 16px 44px rgba(0,0,0,0.10); }
+    .tr-eff__title { font-family: var(--font-heading); font-size: 18px; font-weight: 600; color: var(--ink); margin: 0 0 8px; }
+    .tr-eff__body { font-size: 13.5px; line-height: 1.65; color: var(--cool-gray); margin: 0; }
+    .tr-eff__demo { border-radius: 10px; border: 1px solid var(--line-soft); background: var(--bg); padding: 18px; overflow: hidden; }
+    /* Demo widgets */
+    .tr-bulkbar {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--ink); color: var(--bg);
+      border-radius: 8px; padding: 10px 16px;
+      font-family: var(--font-heading); font-size: 12.5px; font-weight: 500;
+    }
+    .tr-bulkbar span { opacity: 0.75; }
+    .tr-bulkbar b { font-weight: 600; }
+    .tr-bulkbar .tr-bulk-act {
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 6px; padding: 4px 12px;
+      font-size: 11.5px;
+    }
+    .tr-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .tr-table th {
+      font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted);
+      text-align: left; padding: 8px 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .tr-table td { padding: 9px 10px; border-bottom: 1px solid var(--line-soft); color: var(--cool-gray); }
+    .tr-table td:first-child { color: var(--ink); font-weight: 500; }
+    .tr-badge {
+      display: inline-block; border-radius: 999px; padding: 2px 10px;
+      font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.06em;
+    }
+    .tr-badge--active { background: rgba(40,160,80,0.14); color: #1F8A5B; }
+    .tr-badge--inactive { background: rgba(0,0,0,0.08); color: var(--muted); }
+    .tr-badge--pending { background: rgba(230,160,40,0.16); color: #A8720A; }
+    .tr-chip {
+      display: inline-flex; align-items: center; gap: 5px;
+      border: 1px solid var(--line); border-radius: 999px;
+      padding: 4px 12px; font-family: var(--font-mono); font-size: 10px;
+      color: var(--cool-gray); background: var(--paper);
+    }
+    .tr-searchbar {
+      display: flex; align-items: center; gap: 10px;
+      border: 1px solid var(--line); border-radius: 8px;
+      padding: 10px 14px; color: var(--muted);
+      font-size: 13px; background: var(--paper);
+    }
+    .tr-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    /* ── IA diagram ── */
+    .tr-ia {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 36px 0 8px;
+    }
+    .tr-ia__col {
+      border: 1px solid var(--line-soft);
+      border-radius: 12px;
+      background: var(--paper);
+      padding: 22px;
+    }
+    .tr-ia__head {
+      font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--rosewood-2);
+      margin: 0 0 14px;
+    }
+    .tr-ia__col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+    .tr-ia__col li {
+      font-size: 13px; color: var(--cool-gray);
+      padding: 8px 12px; border: 1px solid var(--line-soft);
+      border-radius: 7px; background: var(--bg);
+    }
+    /* ── Devices ── */
+    .tr-devices {
+      display: flex; align-items: flex-end; justify-content: center;
+      gap: 24px; margin: 48px 0 8px;
+    }
+    .tr-device {
+      border: 1px solid var(--line); border-radius: 14px;
+      background: var(--paper); overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      transition: transform 0.35s ease;
+    }
+    .tr-device:hover { transform: translateY(-6px); }
+    .tr-device--desktop { flex: 3; }
+    .tr-device--tablet { flex: 1.6; }
+    .tr-device--mobile { flex: 1; }
+    .tr-device__bar {
+      height: 22px; background: var(--bg);
+      border-bottom: 1px solid var(--line-soft);
+      display: flex; align-items: center; gap: 4px; padding: 0 10px;
+    }
+    .tr-device__bar i { width: 6px; height: 6px; border-radius: 50%; background: var(--line); display: block; }
+    .tr-device img { width: 100%; display: block; }
+    .tr-device__label {
+      font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
+      text-align: center; padding: 10px 0 12px;
+      border-top: 1px solid var(--line-soft);
+    }
+    @media (max-width: 720px) { .tr-devices { flex-direction: column; align-items: stretch; } }
+    /* ── Design system cards ── */
+    .tr-ds-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 40px 0 8px;
+    }
+    .tr-ds-card {
+      border: 1px solid var(--line-soft);
+      border-radius: 14px;
+      background: var(--paper);
+      padding: 24px;
+      min-height: 140px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .tr-ds-card:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(0,0,0,0.10); }
+    .tr-ds-card__label {
+      font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--muted);
+      margin: 0 0 16px;
+    }
+    .tr-btn-demo {
+      display: inline-flex; align-items: center; padding: 9px 20px;
+      border-radius: 8px; font-family: var(--font-heading);
+      font-size: 13px; font-weight: 600;
+    }
+    .tr-btn-demo--primary { background: var(--ink); color: var(--bg); }
+    .tr-btn-demo--secondary { border: 1px solid var(--line); color: var(--ink); background: transparent; }
+    .tr-input-demo {
+      width: 100%; padding: 10px 14px;
+      border: 1px solid var(--line); border-radius: 8px;
+      background: var(--bg); font-size: 13px; color: var(--muted);
+    }
+    .tr-dialog-demo {
+      border: 1px solid var(--line); border-radius: 10px;
+      background: var(--bg); padding: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+      font-size: 12px; color: var(--cool-gray);
+    }
+    .tr-dialog-demo b { display: block; color: var(--ink); font-size: 13px; margin-bottom: 4px; }
+    .tr-pagination { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--cool-gray); }
+    .tr-page {
+      width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--line); border-radius: 6px;
+    }
+    .tr-page.is-current { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .tr-panel-demo {
+      border: 1px solid var(--line); border-left: 3px solid var(--rosewood-2);
+      border-radius: 8px; background: var(--bg); padding: 14px;
+      font-size: 12px; color: var(--cool-gray);
+    }
+    .tr-panel-demo b { display: block; color: var(--ink); font-size: 12.5px; margin-bottom: 3px; }
+    /* ── Gallery carousel ── */
+    .tr-gallery { position: relative; margin: 40px 0 8px; }
+    .tr-gallery__track {
+      display: flex; gap: 16px; overflow-x: auto;
+      scroll-snap-type: x mandatory; scrollbar-width: none;
+      padding: 8px 4px 20px; cursor: grab;
+    }
+    .tr-gallery__track::-webkit-scrollbar { display: none; }
+    .tr-gallery__track.is-dragging { cursor: grabbing; scroll-snap-type: none; }
+    .tr-gallery__item {
+      flex: 0 0 72%; scroll-snap-align: center;
+      border-radius: 14px; overflow: hidden;
+      border: 1px solid var(--line); background: var(--paper);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .tr-gallery__item:hover { transform: scale(1.015); box-shadow: 0 18px 48px rgba(0,0,0,0.16); }
+    .tr-gallery__item img { width: 100%; height: 400px; display: block; object-fit: cover; object-position: top; cursor: zoom-in; }
+    .tr-gallery__btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--bg); border: 1px solid var(--line);
+      color: var(--ink); font-size: 16px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 3; opacity: 0; pointer-events: none;
+      transition: opacity 0.25s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.14);
+    }
+    .tr-gallery__btn.is-visible { opacity: 0.94; pointer-events: auto; }
+    .tr-gallery__btn:hover { opacity: 1; background: var(--paper); }
+    .tr-gallery__btn--prev { left: -14px; }
+    .tr-gallery__btn--next { right: -14px; }
+    /* ── Lightbox ── */
+    .tr-lightbox {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,0.9);
+      align-items: center; justify-content: center; padding: 48px;
+    }
+    .tr-lightbox.is-open { display: flex; }
+    .tr-lightbox__img {
+      max-width: 88vw; max-height: 88vh;
+      border-radius: 10px; object-fit: contain;
+      box-shadow: 0 40px 90px rgba(0,0,0,0.5);
+      animation: tr-zoom 0.3s cubic-bezier(.2,.65,.3,1);
+    }
+    @keyframes tr-zoom { from { transform: scale(0.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .tr-lightbox__close {
+      position: absolute; top: 20px; right: 24px;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.22);
+      color: #fff; font-size: 14px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; z-index: 2;
+    }
+    .tr-lightbox__nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.22);
+      color: #fff; font-size: 17px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; z-index: 2;
+    }
+    .tr-lightbox__nav--prev { left: 22px; }
+    .tr-lightbox__nav--next { right: 22px; }
+    /* ── Spotlights ── */
+    .tr-spotlights { display: flex; flex-direction: column; gap: 16px; margin: 40px 0 8px; }
+    .tr-spot {
+      display: grid;
+      grid-template-columns: 0.8fr 1.5fr;
+      gap: 28px;
+      align-items: center;
+      border: 1px solid var(--line-soft);
+      border-radius: 16px;
+      background: var(--paper);
+      padding: 32px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .tr-spot:hover { transform: translateY(-3px); box-shadow: 0 16px 44px rgba(0,0,0,0.10); }
+    .tr-spot:nth-child(even) { grid-template-columns: 1.5fr 0.8fr; }
+    .tr-spot:nth-child(even) .tr-spot__text { order: 2; }
+    .tr-spot__label {
+      font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--rosewood-2); margin: 0 0 8px;
+    }
+    .tr-spot__title { font-family: var(--font-heading); font-size: 19px; font-weight: 600; color: var(--ink); margin: 0 0 8px; }
+    .tr-spot__body { font-size: 13.5px; line-height: 1.65; color: var(--cool-gray); margin: 0; }
+    .tr-spot__visual { border-radius: 10px; overflow: hidden; border: 1px solid var(--line-soft); }
+    .tr-spot__visual img { width: 100%; display: block; cursor: zoom-in; }
+    /* ── Decision cards ── */
+    .tr-decisions { display: flex; flex-direction: column; gap: 16px; margin: 40px 0 8px; }
+    .tr-decision {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 28px;
+      align-items: center;
+      border: 1px solid var(--line-soft);
+      border-radius: 16px;
+      background: var(--paper);
+      padding: 36px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .tr-decision:hover { transform: translateY(-3px); box-shadow: 0 16px 44px rgba(0,0,0,0.10); }
+    .tr-decision__title {
+      font-family: var(--font-heading); font-size: 21px; font-weight: 600;
+      letter-spacing: -0.01em; color: var(--ink); margin: 0 0 10px;
+    }
+    .tr-decision__body { font-size: 14px; line-height: 1.68; color: var(--cool-gray); margin: 0; }
+    .tr-decision__visual { border-radius: 10px; overflow: hidden; border: 1px solid var(--line-soft); }
+    .tr-decision__visual img { width: 100%; display: block; }
+    /* ── Outcome ── */
+    .tr-outcome {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 36px 0 8px;
+    }
+    .tr-outcome__item {
+      padding: 22px 24px;
+      border: 1px solid var(--line-soft);
+      border-radius: 12px;
+      background: var(--paper);
+      font-family: var(--font-heading);
+      font-size: 14.5px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    @media (max-width: 860px) {
+      .tr-challenges { grid-template-columns: repeat(2, 1fr); }
+      .tr-ds-grid, .tr-outcome, .tr-ia { grid-template-columns: repeat(2, 1fr); }
+      .tr-eff__row, .tr-decision, .tr-spot, .tr-spot:nth-child(even) { grid-template-columns: 1fr; }
+      .tr-spot:nth-child(even) .tr-spot__text { order: 0; }
+    }
+    @media (max-width: 600px) {
+      .tr-challenges, .tr-ds-grid, .tr-outcome, .tr-ia { grid-template-columns: 1fr; }
+      .tr-gallery__item { flex: 0 0 88%; }
+    }
+  </style>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="description" content="Case study by Ingrid Valdera, Senior Product Designer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Enterprise User Management — TalentReef · Ingrid Valdera" />
+  <meta property="og:description" content="Case study by Ingrid Valdera, Senior Product Designer." />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Enterprise User Management — TalentReef · Ingrid Valdera" />
+  <meta name="twitter:description" content="Case study by Ingrid Valdera, Senior Product Designer." />
+  <meta name="twitter:image" content="/assets/og-image.png" />
+</head>
+<body>
+  <!-- ─── Fixed pill nav ─── -->
+  <nav class="pill-nav" id="pill-nav" aria-label="Primary">
+    <div class="pill-nav__inner">
+      <a href="index.html" class="pill-nav__brand">
+        <img class="logo-dark" src="uploads/InValdur.-ab41dde3.svg" alt="InValdur." style="height: 16px; display: block;" />
+        <img class="logo-light" src="uploads/darkInValdur..svg" alt="InValdur." style="height: 16px; display: none;" />
+      </a>
+      <div class="pill-nav__links">
+        <button class="theme-toggle" aria-label="Switch theme">
+          <svg class="t-moon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M11.2 9.1A5 5 0 0 1 4.9 2.8c0-.3-.3-.5-.5-.4A6 6 0 1 0 11.6 9.6c.1-.2-.1-.5-.4-.5Z" fill="currentColor"/></svg>
+          <svg class="t-sun" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="2.6" fill="currentColor"/><path d="M7 .8v1.4M7 11.8V13.2M.8 7h1.4M11.8 7h1.4M2.7 2.7l1 1M10.3 10.3l1 1M10.3 3.7l1-1M2.7 11.3l1-1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <span class="t-lbl-light">Light</span>
+          <span class="t-lbl-dark">Dark</span>
+        </button>
+        <div class="pill-nav__item">
+          <a href="index.html#cases" class="pill-nav__link is-active" aria-haspopup="true" aria-expanded="false">Projects <i class="pill-nav__caret"></i></a>
+          <div class="pill-nav__dropdown">
+            <a href="case-01.html" class="pill-nav__drop-link" style="font-size: 14px">Investment Technology</a>
+            <a href="case-02.html" class="pill-nav__drop-link" style="font-size: 14px">Brokerage Growth AI</a>
+            <a href="case-03.html" class="pill-nav__drop-link" style="font-size: 14px">Insurance Platform</a>
+            <a href="case-04.html" class="pill-nav__drop-link" style="font-size: 14px">Talent Management</a>
+          </div>
+        </div>
+        <a href="about.html" class="pill-nav__link">About me</a>
+        <a href="contact.html" class="pill-nav__link">Let's talk!</a>
+        <a href="https://www.linkedin.com/in/ingridvaldera/" target="_blank" rel="noopener" class="pill-nav__link">LinkedIn</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <!-- Hero -->
+    <header class="cs-hero2">
+      <div class="cs-hero2__left">
+        <p class="cs-hero2__eyebrow">004 — B2B · Talent Management Software</p>
+        <h1 class="cs-hero2__title"><em>Enterprise</em> User Management</h1>
+        <p class="cs-hero2__desc">Led research and concept design for TalentReef's user administration experience, helping enterprise admins manage thousands of users, roles, and permissions efficiently.</p>
+        <dl class="cs-hero2__meta">
+          <div class="cs-hero2__meta-item"><dt>Client</dt><dd>TalentReef</dd></div>
+          <div class="cs-hero2__meta-item"><dt>Role</dt><dd>Lead Product Designer</dd></div>
+          <div class="cs-hero2__meta-item"><dt>Industry</dt><dd>HR Tech · Enterprise SaaS</dd></div>
+          <div class="cs-hero2__meta-item"><dt>Platform</dt><dd>Web Application</dd></div>
+        </dl>
+        <a href="#overview" class="cs-hero2__cta">Read Case Study ↓</a>
+      </div>
+      <div class="cs-hero2__right">
+        <div class="cs-hero2__browser">
+          <div class="cs-hero2__browser-bar">
+            <div class="cs-hero2__dots"><span></span><span></span><span></span></div>
+            <div class="cs-hero2__url">admin.talentreef.com</div>
+          </div>
+          <div class="cs-hero2__screen">
+            <img src="uploads/Case004-Thumbnail-cropped.png" alt="TalentReef User Account Management" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="cs-page">
+
+      <!-- 1 · Overview -->
+      <section class="cs-section" id="overview" data-reveal>
+        <p class="cs-label">Overview</p>
+        <h2 class="cs-section-title">Enterprise administration at scale</h2>
+        <p class="cs-body">TalentReef serves large organizations managing thousands of hourly employees across hundreds of locations — each with its own managers, roles, and permission levels.</p>
+        <p class="cs-body">I led research and concept design for the administration experience: making user management, role assignment, and permissions feel simple at enterprise scale.</p>
+        <div class="cs-img-wrap" data-reveal>
+          <img src="uploads/01-UserAccountManagement.png" alt="User Account Management — main interface" style="width:100%;display:block;border-radius:10px;cursor:zoom-in;" onclick="trOpenLightbox(this)" />
+        </div>
+        <p class="cs-caption">User Account Management, the administrative home for enterprise organizations. Click to expand.</p>
+      </section>
+
+      <!-- 2 · Challenge -->
+      <section class="cs-section" data-reveal>
+        <p class="cs-label">The Challenge</p>
+        <h2 class="cs-section-title">Four problems every admin faced</h2>
+        <div class="tr-challenges">
+          <div class="tr-challenge" data-reveal>
+            <div class="tr-challenge__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <p class="tr-challenge__title">Thousands of employees</p>
+            <p class="tr-challenge__body">Onboarding a location meant setting up 20+ users, one at a time.</p>
+          </div>
+          <div class="tr-challenge" data-reveal>
+            <div class="tr-challenge__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <p class="tr-challenge__title">Complex permissions</p>
+            <p class="tr-challenge__body">Custom hierarchies didn't map to default permission sets.</p>
+          </div>
+          <div class="tr-challenge" data-reveal>
+            <div class="tr-challenge__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            </div>
+            <p class="tr-challenge__title">Time-consuming admin</p>
+            <p class="tr-challenge__body">Routine account changes took too many steps and too much time.</p>
+          </div>
+          <div class="tr-challenge" data-reveal>
+            <div class="tr-challenge__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3v18h18"/><path d="M7 16l4-6 4 3 5-8"/></svg>
+            </div>
+            <p class="tr-challenge__title">Information overload</p>
+            <p class="tr-challenge__body">No visibility into who had access to what — or why.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 · Enterprise Workflows -->
+      <section class="cs-section" data-reveal>
+        <p class="cs-label">Understanding Enterprise Workflows</p>
+        <h2 class="cs-section-title">Mapping roles, permissions, and hierarchy</h2>
+        <div class="tr-diagram" data-reveal>
+          <p class="tr-diagram__label">Permission hierarchy</p>
+          <div class="tr-tree">
+            <div class="tr-tree__branch">
+              <div class="tr-node tr-node--root">Corporate Admin</div>
+              <p class="tr-node__sub">Full organization access</p>
+            </div>
+            <div class="tr-tree__stem"></div>
+            <div class="tr-tree__row">
+              <div class="tr-tree__branch">
+                <div class="tr-node">Regional Manager</div>
+                <p class="tr-node__sub">Multi-location<br />user management</p>
+              </div>
+              <div class="tr-tree__branch">
+                <div class="tr-node">Store Manager</div>
+                <p class="tr-node__sub">Single location<br />hiring &amp; scheduling</p>
+              </div>
+              <div class="tr-tree__branch">
+                <div class="tr-node">Store Supervisor</div>
+                <p class="tr-node__sub">Day-to-day<br />team operations</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tr-diagram" data-reveal>
+          <p class="tr-diagram__label">Core administrative tasks</p>
+          <div class="tr-tree__row">
+            <span class="tr-chip">Onboard new users</span>
+            <span class="tr-chip">Assign roles</span>
+            <span class="tr-chip">Adjust permissions</span>
+            <span class="tr-chip">Transfer between locations</span>
+            <span class="tr-chip">Deactivate accounts</span>
+            <span class="tr-chip">Audit changes</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 · Designing for Efficiency -->
+      <section class="cs-section" data-reveal>
+        <p class="cs-label">Designing for Efficiency</p>
+        <h2 class="cs-section-title">Every decision, paired with the UI</h2>
+        <div class="tr-eff">
+          <div class="tr-eff__row" data-reveal>
+            <div>
+              <p class="tr-eff__title">Bulk actions</p>
+              <p class="tr-eff__body">Select many, act once. Onboarding a new location went from 20 individual edits to a single batch operation.</p>
+            </div>
+            <div class="tr-eff__demo">
+              <div class="tr-bulkbar">
+                <b>14 selected</b>
+                <span>·</span>
+                <span class="tr-bulk-act">Assign role</span>
+                <span class="tr-bulk-act">Transfer</span>
+                <span class="tr-bulk-act">Deactivate</span>
+              </div>
+            </div>
+          </div>
+          <div class="tr-eff__row" data-reveal>
+            <div>
+              <p class="tr-eff__title">Search &amp; filters</p>
+              <p class="tr-eff__body">Find any user in seconds — by name, email, location, role, or status — without leaving the table.</p>
+            </div>
+            <div class="tr-eff__demo">
+              <div class="tr-searchbar">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+                Search by name, email, location
+              </div>
+              <div class="tr-filters">
+                <span class="tr-chip">Status: Active ✕</span>
+                <span class="tr-chip">Location: Denver ✕</span>
+                <span class="tr-chip">Role: Manager ✕</span>
+              </div>
+            </div>
+          </div>
+          <div class="tr-eff__row" data-reveal>
+            <div>
+              <p class="tr-eff__title">Scannable tables</p>
+              <p class="tr-eff__body">Dense but never noisy — status at a glance, sorting on every column, and actions where you expect them.</p>
+            </div>
+            <div class="tr-eff__demo">
+              <table class="tr-table">
+                <thead><tr><th>Name</th><th>Role</th><th>Location</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Marco Logan</td><td>Assistant Manager</td><td>Denver</td><td><span class="tr-badge tr-badge--active">Active</span></td></tr>
+                  <tr><td>Ana Miller</td><td>Store Manager</td><td>Newark</td><td><span class="tr-badge tr-badge--pending">Pending</span></td></tr>
+                  <tr><td>Carlos Smith</td><td>Supervisor</td><td>Denver</td><td><span class="tr-badge tr-badge--inactive">Inactive</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 · Information Architecture -->
+      <section class="cs-section" data-reveal>
+        <p class="cs-label">Information Architecture</p>
+        <h2 class="cs-section-title">Organized around how admins think</h2>
+        <div class="tr-ia">
+          <div class="tr-ia__col" data-reveal>
+            <p class="tr-ia__head">Organization</p>
+            <ul>
+              <li>Company</li>
+              <li>Regions</li>
+              <li>Locations</li>
+              <li>Teams</li>
+            </ul>
+          </div>
+          <div class="tr-ia__col" data-reveal>
+            <p class="tr-ia__head">People</p>
+            <ul>
+              <li>User directory</li>
+              <li>Roles</li>
+              <li>Permissions</li>
+              <li>Invitations</li>
+            </ul>
+          </div>
+          <div class="tr-ia__col" data-reveal>
+            <p class="tr-ia__head">Accountability</p>
+            <ul>
+              <li>Activity log</li>
+              <li>Change history</li>
+              <li>Access reviews</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 · Responsive Experience (hidden) -->
+      <section class="cs-section" data-reveal style="display: none;">
+        <p class="cs-label">Responsive Experience</p>
+        <h2 class="cs-section-title">Admin work, on any screen</h2>
+        <div class="tr-devices" data-reveal>
+          <div class="tr-device tr-device--desktop">
+            <div class="tr-device__bar"><i></i><i></i><i></i></div>
+            <img src="uploads/Case004-Thumbnail-cropped.png" alt="Desktop interface" />
+            <p class="tr-device__label">Desktop</p>
+          </div>
+          <div class="tr-device tr-device--tablet">
+            <div class="tr-device__bar"></div>
+            <img src="uploads/Case004-Thumbnail-cropped.png" alt="Tablet interface" />
+            <p class="tr-device__label">Tablet</p>
+          </div>
+          <div class="tr-device tr-device--mobile">
+            <div class="tr-device__bar"></div>
+            <img src="uploads/Case004-Thumbnail-cropped.png" alt="Mobile interface" />
+            <p class="tr-device__label">Mobile</p>
+          </div>
+        </div>
+        <p class="cs-caption">One admin experience adapting across desktop, tablet, and mobile.</p>
+      </section>
+
+      <!-- 7 · Enterprise Design System -->
+      <section class="cs-section" data-reveal>
+        <p class="cs-label">Enterprise Design System</p>
+        <h2 class="cs-section-title">Components built for density and clarity</h2>
+        <div class="tr-ds-grid">
+          <div class="tr-ds-card" data-reveal>
+            <p class="tr-ds-card__label">Data table</p>
+            <table class="tr-table">
+              <thead><tr><th>Name</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Karla Carpenter</td><td><span class="tr-badge tr-badge--active">Active</span></td></tr>
+                <tr><td>Paula Young</td><td><span class="tr-badge tr-badge--inactive">Inactive</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tr-ds-card" data-reveal>
+            <p class="tr-ds-card__label">Search</p>
+            <div class="tr-searchbar">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+              Search users…
+            </div>
+          </div>
+          <div class="tr-ds-card" data-reveal>
+            <p class="tr-ds-card__label">Filters</p>
+            <div class="tr-filters" style="margin-top:0;">
+              <span class="tr-chip">Status ▾</span>
+              <span class="tr-chip">Location ▾</span>
+              <span class="tr-chip">Role ▾</span>
+            </div>
+          </div>
+          <div class="tr-ds-card" data-reveal>
+            <p class="tr-ds-card__label">Permission chips</p>
+            <div class="tr-filters" style="margin-top:0;">
+              <span class="tr-chip">Hiring ✓</span>
+              <span class="tr-chip">Scheduling ✓</span>
+              <span class="tr-chip">Payroll ✕</span>
+            </div>
+          </div>
+          <div class="tr-ds-card" data-reveal>
+            <p class="tr-ds-card__label">Status badges</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <span class="tr-badge tr-badge--active">Active</span>
+              <span class="tr-badge tr-badge--pending">Pending</span>
+              <span class="tr-badge tr-badge--inactive">Inactive</span>
+            </div>
+          </div>
+          <div class="tr-ds-card" data-reveal>
+            <p class="tr-ds-card__label">Buttons</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <span class="tr-btn-demo tr-btn-demo--primary">Add user</span>
+              <span class="tr-btn-demo tr-btn-demo--secondary">Export</span>
+            </div>
+          </div>
+          <div class="tr-ds-card" data-reveal>
+            <p class="tr-ds-card__label">Inputs</p>
+            <div class="tr-input-demo">jane.doe@company.com</div>
+          </div>
+          <div class="tr-ds-card" data-reveal>
+            <p class="tr-ds-card__label">Dialog</p>
+            <div class="tr-dialog-demo">
+              <b>Deactivate 3 users?</b>
+              They will lose access immediately.
+            </div>
+          </div>
+          <div class="tr-ds-card" data-reveal>
+            <p class="tr-ds-card__label">Pagination</p>
+            <div class="tr-pagination">
+              <span class="tr-page">←</span>
+              <span class="tr-page is-current">1</span>
+              <span class="tr-page">2</span>
+              <span class="tr-page">3</span>
+              <span class="tr-page">→</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8 · Interactive Product Gallery -->
+      <section class="cs-section" data-reveal>
+        <p class="cs-label">Product Gallery</p>
+        <h2 class="cs-section-title">The interface, up close</h2>
+        <p class="cs-body">Drag, swipe, or use the arrows. Click any screen to view fullscreen.</p>
+        <div class="tr-gallery">
+          <button class="tr-gallery__btn tr-gallery__btn--prev" id="trGalPrev" aria-label="Previous">&#8592;</button>
+          <button class="tr-gallery__btn tr-gallery__btn--next" id="trGalNext" aria-label="Next">&#8594;</button>
+          <div class="tr-gallery__track" id="trGalTrack" tabindex="0">
+            <div class="tr-gallery__item"><img src="uploads/01-UserAccountManagement.png" alt="User Account Management" onclick="trOpenLightbox(this)" /></div>
+            <div class="tr-gallery__item"><img src="uploads/Case004-Thumbnail-cropped.png" alt="User directory table" onclick="trOpenLightbox(this)" /></div>
+            <div class="tr-gallery__item"><img src="uploads/01-UserAccountManagement-fcbbb1da.png" alt="User Account Management — actions menu" onclick="trOpenLightbox(this)" /></div>
+            <div class="tr-gallery__item"><img src="uploads/02-UAM-Edit.png" alt="Add new user — role selection" onclick="trOpenLightbox(this)" /></div>
+            <div class="tr-gallery__item"><img src="uploads/02-UAM-Edit-1.png" alt="Add new user — role dropdown open" onclick="trOpenLightbox(this)" /></div>
+            <div class="tr-gallery__item"><img src="uploads/02-UAM-Edit-2.png" alt="Add new user — account information form" onclick="trOpenLightbox(this)" /></div>
+            <div class="tr-gallery__item"><img src="uploads/02-UAM-Edit-3.png" alt="Add new user — completed account information" onclick="trOpenLightbox(this)" /></div>
+            <div class="tr-gallery__item"><img src="uploads/02-UAM-Edit-4.png" alt="Add new user — permissions checklist" onclick="trOpenLightbox(this)" /></div>
+            <div class="tr-gallery__item"><img src="uploads/02-UAM-Edit-38f2ba2f.png" alt="Add new user — location associations" onclick="trOpenLightbox(this)" /></div>
+            <div class="tr-gallery__item"><img src="uploads/01-UserAccountManagement-10701c3e.png" alt="User Account Management — success confirmation" onclick="trOpenLightbox(this)" /></div>
+          </div>
+        </div>
+        <p class="cs-caption">Representative screens from the design concept. Click any image to explore in detail.</p>
+      </section>
+
+      <!-- 9 · Feature Spotlights (hidden) -->
+      <section class="cs-section" data-reveal style="display: none;">
+        <p class="cs-label">Feature Spotlights</p>
+        <h2 class="cs-section-title">The features that carry the workload</h2>
+        <div class="tr-spotlights">
+          <div class="tr-spot" data-reveal>
+            <div class="tr-spot__text">
+              <p class="tr-spot__label">Employee Directory</p>
+              <p class="tr-spot__title">Everyone, in one view</p>
+              <p class="tr-spot__body">The directory scales from 20 users to 20,000 — with search, filters, and sorting that keep any org navigable.</p>
+            </div>
+            <div class="tr-spot__visual">
+              <img src="uploads/01-UserAccountManagement.png" alt="Employee directory" onclick="trOpenLightbox(this)" />
+            </div>
+          </div>
+          <div class="tr-spot" data-reveal>
+            <div class="tr-spot__text">
+              <p class="tr-spot__label">Role Assignment</p>
+              <p class="tr-spot__title">Permissions without the spreadsheet</p>
+              <p class="tr-spot__body">A flexible role editor supports custom enterprise hierarchies while keeping every permission visible and reversible.</p>
+            </div>
+            <div class="tr-spot__visual">
+              <div class="cs-img-placeholder" style="margin:0;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                Role editor — permissions matrix
+              </div>
+            </div>
+          </div>
+          <div class="tr-spot" data-reveal>
+            <div class="tr-spot__text">
+              <p class="tr-spot__label">Bulk Editing</p>
+              <p class="tr-spot__title">One action, many users</p>
+              <p class="tr-spot__body">Batch role changes, transfers, and deactivations turned the most repetitive admin work into a single step.</p>
+            </div>
+            <div class="tr-spot__visual">
+              <div class="cs-img-placeholder" style="margin:0;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                Bulk editing flow
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 · Design Decisions -->
+      <section class="cs-section" data-reveal>
+        <p class="cs-label">Design Decisions</p>
+        <h2 class="cs-section-title">Why it works</h2>
+        <div class="tr-decisions">
+          <div class="tr-decision" data-reveal>
+            <div>
+              <p class="tr-decision__title">Designing for speed</p>
+              <p class="tr-decision__body">Admin time is expensive. Every workflow was measured in clicks and redesigned until routine tasks felt instant.</p>
+            </div>
+            <div class="tr-decision__visual">
+              <img src="uploads/Screenshot 2026-07-14 at 1.46.19 AM.png" alt="Bulk actions — edit, send welcome email, reset password for multiple users at once" />
+            </div>
+          </div>
+          <div class="tr-decision" data-reveal>
+            <div>
+              <p class="tr-decision__title">Simplifying permissions</p>
+              <p class="tr-decision__body">Permissions became visible, named, and chip-based — no more guessing what a role could actually do.</p>
+            </div>
+            <div class="tr-decision__visual">
+              <img src="uploads/Screenshot 2026-07-14 at 1.51.08 AM.png" alt="Simplified permissions view — role, description, and collapsible permission groups" />
+            </div>
+          </div>
+          <div class="tr-decision" data-reveal>
+            <div>
+              <p class="tr-decision__title">Supporting large datasets</p>
+              <p class="tr-decision__body">Tables, filters, and pagination were designed for the 20,000-user org first — so smaller orgs simply feel effortless.</p>
+            </div>
+            <div class="tr-decision__visual">
+              <img src="uploads/Screenshot 2026-07-14 at 1.51.53 AM.png" alt="Permissions exploration — full checklist with all permissions selected for large orgs" />
+            </div>
+          </div>
+          <div class="tr-decision" data-reveal>
+            <div>
+              <p class="tr-decision__title">Reducing repetitive work</p>
+              <p class="tr-decision__body">Bulk actions, saved filters, and sensible defaults eliminated the busywork that made admins dread the tool.</p>
+            </div>
+            <div class="tr-decision__visual">
+              <img src="uploads/Screenshot 2026-07-14 at 1.52.44 AM.png" alt="Bulk actions bar with edit, send welcome email, and reset password on selected users" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 · Outcome -->
+      <section class="cs-section" data-reveal>
+        <p class="cs-label">Outcome</p>
+        <h2 class="cs-section-title">Designing enterprise software people actually enjoy using</h2>
+        <div class="tr-outcome">
+          <div class="tr-outcome__item" data-reveal>Scales from 20 users to 20,000</div>
+          <div class="tr-outcome__item" data-reveal>Routine tasks reduced to single steps</div>
+          <div class="tr-outcome__item" data-reveal>Permissions everyone can understand</div>
+          <div class="tr-outcome__item" data-reveal>System thinking over one-off screens</div>
+          <div class="tr-outcome__item" data-reveal>Patterns engineering can maintain long-term</div>
+          <div class="tr-outcome__item" data-reveal>Validated with the admins who use it daily</div>
+        </div>
+      </section>
+
+      <nav class="cs-nav" aria-label="Case studies">
+        <a href="case-03.html" class="cs-nav__item">
+          <span class="cs-nav__dir">← Previous</span>
+          <span class="cs-nav__title">A More Human Insurance Experience</span>
+          <span class="cs-nav__sub">RIMAC · Product Designer</span>
+        </a>
+        <a href="index.html#cases" class="cs-nav__item">
+          <span class="cs-nav__dir">All projects →</span>
+          <span class="cs-nav__title">Back to home</span>
+        </a>
+      </nav>
+
+    </div>
+
+    <!-- Lightbox -->
+    <div class="tr-lightbox" id="trLightbox">
+      <button class="tr-lightbox__close" onclick="trCloseLightbox()" aria-label="Close">&#10005;</button>
+      <button class="tr-lightbox__nav tr-lightbox__nav--prev" onclick="event.stopPropagation();trLightboxNav(-1)" aria-label="Previous">&#8592;</button>
+      <button class="tr-lightbox__nav tr-lightbox__nav--next" onclick="event.stopPropagation();trLightboxNav(1)" aria-label="Next">&#8594;</button>
+      <img class="tr-lightbox__img" id="trLightboxImg" alt="" />
+    </div>
+
+        <section class="contact-block">
+      <div>
+        <div class="contact-block__eyebrow">[ Let's talk ]</div>
+        <h2 class="contact-block__title">Great products<br />don't happen by accident.</h2>
+        <p class="contact-block__sub">Let's build one together.</p>
+        <p class="contact-block__intro">Whether you're hiring, building, or simply exchanging ideas, my inbox is always open.</p>
+      </div>
+      <div class="contact-block__right">
+        <div class="contact-block__email-label">Email</div>
+        <div class="contact-block__email-row">
+          <a class="contact-block__email-text" href="mailto:ingridvalderaurday@gmail.com" aria-label="Email Ingrid">ingridvalderaurday@gmail.com</a>
+          <button class="contact-block__copy-btn" data-copy-email aria-label="Copy email">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy
+          </button>
+        </div>
+        <div class="contact-block__rows">
+          <div class="contact-block__row">
+            <span class="contact-block__row-key">Status</span>
+            <span class="contact-block__status-val"><span class="contact-block__status-dot"></span>Full-time · Contract · Consulting</span>
+          </div>
+          <a class="contact-block__row" href="https://www.linkedin.com/in/ingridvaldera/" target="_blank" rel="noopener">
+            <span class="contact-block__row-key">LinkedIn</span>
+            <span class="contact-block__row-val">/in/ingridvaldera ↗</span>
+          </a>
+          <div class="contact-block__row">
+            <span class="contact-block__row-key">Location</span>
+            <span class="contact-block__row-val">Toronto, ON</span>
+          </div>
+        </div>
+      </div>
+    </section>
+        <footer class="footer">
+      <span>© 2026 — Ingrid Valdera Urday</span>
+      <span>v.2026.04</span>
+      <span>Built in Toronto, ON</span>
+    </footer>
+  </main>
+    <script src="pill-nav.js"></script>
+  <script src="theme-toggle.js"></script>
+  <script src="email-copy.js"></script>
+  <script>
+    /* ── Reveal on scroll ── */
+    (function() {
+      const els = document.querySelectorAll('[data-reveal]');
+      if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('is-in')); return; }
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach((e, i) => {
+        e.style.transitionDelay = (i % 4) * 60 + 'ms';
+        io.observe(e);
+      });
+    })();
+
+    /* ── Lightbox ── */
+    let trLbImages = [];
+    let trLbIndex = 0;
+    function trCollectImages() {
+      trLbImages = Array.from(document.querySelectorAll('img[onclick*="trOpenLightbox"]'));
+    }
+    function trOpenLightbox(el) {
+      trCollectImages();
+      trLbIndex = trLbImages.indexOf(el);
+      trShowLightbox();
+    }
+    function trShowLightbox() {
+      const img = trLbImages[trLbIndex];
+      const lbImg = document.getElementById('trLightboxImg');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbImg.style.animation = 'none';
+      void lbImg.offsetWidth;
+      lbImg.style.animation = '';
+      document.getElementById('trLightbox').classList.add('is-open');
+    }
+    function trCloseLightbox() {
+      document.getElementById('trLightbox').classList.remove('is-open');
+    }
+    function trLightboxNav(dir) {
+      trLbIndex = (trLbIndex + dir + trLbImages.length) % trLbImages.length;
+      trShowLightbox();
+    }
+    document.getElementById('trLightbox').addEventListener('click', function(e) {
+      if (e.target === this) trCloseLightbox();
+    });
+    document.addEventListener('keydown', e => {
+      const lb = document.getElementById('trLightbox');
+      if (!lb.classList.contains('is-open')) return;
+      if (e.key === 'Escape') trCloseLightbox();
+      if (e.key === 'ArrowLeft') trLightboxNav(-1);
+      if (e.key === 'ArrowRight') trLightboxNav(1);
+    });
+    (function() {
+      const lb = document.getElementById('trLightbox');
+      let sx = 0;
+      lb.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+      lb.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - sx;
+        if (Math.abs(dx) > 50) trLightboxNav(dx < 0 ? 1 : -1);
+      }, { passive: true });
+    })();
+
+    /* ── Gallery carousel ── */
+    (function() {
+      const track = document.getElementById('trGalTrack');
+      const prev = document.getElementById('trGalPrev');
+      const next = document.getElementById('trGalNext');
+      if (!track) return;
+      function itemWidth() {
+        const item = track.querySelector('.tr-gallery__item');
+        return item ? item.offsetWidth + 16 : 300;
+      }
+      function update() {
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        prev.classList.toggle('is-visible', track.scrollLeft > 8);
+        next.classList.toggle('is-visible', maxScroll > 8 && track.scrollLeft < maxScroll - 8);
+      }
+      prev.addEventListener('click', () => track.scrollBy({ left: -itemWidth(), behavior: 'smooth' }));
+      next.addEventListener('click', () => track.scrollBy({ left: itemWidth(), behavior: 'smooth' }));
+      track.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+      track.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); track.scrollBy({ left: -itemWidth(), behavior: 'smooth' }); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); track.scrollBy({ left: itemWidth(), behavior: 'smooth' }); }
+      });
+      let isDown = false, startX = 0, startScroll = 0, moved = false;
+      track.addEventListener('pointerdown', e => {
+        if (e.pointerType !== 'mouse') return;
+        isDown = true; moved = false;
+        startX = e.clientX; startScroll = track.scrollLeft;
+        track.classList.add('is-dragging');
+      });
+      window.addEventListener('pointermove', e => {
+        if (!isDown) return;
+        const dx = e.clientX - startX;
+        if (Math.abs(dx) > 4) moved = true;
+        track.scrollLeft = startScroll - dx;
+      });
+      window.addEventListener('pointerup', () => {
+        isDown = false;
+        track.classList.remove('is-dragging');
+      });
+      track.addEventListener('click', e => {
+        if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; }
+      }, true);
+    })();
+  </script>
+</body>
+</html>
